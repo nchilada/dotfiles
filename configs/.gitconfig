@@ -1,0 +1,26 @@
+[user]
+    name = nikhil
+    email = nikhil@nikhil.cc
+
+[alias]
+    ad = add
+    bl = blame
+    br = branch
+    bs = bisect
+    ch = checkout
+    cm = commit
+    df = diff
+    lg = log
+    pk = cherry-pick
+    sh = show
+    st = status
+    undo-commit = reset --soft HEAD^
+
+[color]
+    ui = true
+
+[core]
+	editor = emacs
+
+[push]
+	default = current
