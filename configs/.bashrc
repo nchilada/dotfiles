@@ -11,7 +11,7 @@ export EDITOR=emacs
 export PAGER=less
 
 # prompt
-PS1=$'\u \$ '
+export PS1="\u » "
 
 # git autocompletion.
 source ~/.git-completion.bash
