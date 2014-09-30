@@ -7,6 +7,9 @@ export PATH=$HOME/bin:$PATH
 export MANPATH=$HOME/man:$MANPATH
 export LD_LIBRARY_PATH=$HOME/lib:$LD_LIBRARY_PATH
 
+export EDITOR=emacs
+export PAGER=less
+
 # prompt
 PS1=$'\u \$ '
 
