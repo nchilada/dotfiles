@@ -1,1 +1,8 @@
+# Emacs backups.
 *~
+
+# Emacs mutexes.
+\#*#
+
+# OS X Finder preferences.
+.DS_Store
