@@ -10,9 +10,11 @@ if [ $# -ne 2 ]; then
 fi
 
 THIS_REPO="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
 CONFIGS="$THIS_REPO/configs"
 PLATFORM_CONFIGS="$CONFIGS/platform_$1"
 PLATFORM_PROFILE_CONFIGS="$PLATFORM_CONFIGS/profile_$2"
+
 
 if [ ! -d "$PLATFORM_PROFILE_CONFIGS" ]; then
    echo "Error in $0 $@: can't find $PLATFORM_PROFILE_CONFIGS/"
@@ -76,3 +78,26 @@ for filename in "$PLATFORM_PROFILE_CONFIGS"/*; do
    echo "$linkname ----------------> $filename"
    ln -sf "$filename" "$linkname"
 done
+
+
+### Register runtimes from ./runtimes/<platform>/<profile>/
+
+RUNTIMES="$THIS_REPO/runtimes"
+PLATFORM_RUNTIMES="$RUNTIMES/platform_$1"
+PLATFORM_PROFILE_RUNTIMES="$PLATFORM_RUNTIMES/profile_$2"
+
+# Create a symlink from ./Makefile to the most specific Makefile.
+linkname=./Makefile
+if [[ -e "$PLATFORM_PROFILE_RUNTIMES"/Makefile ]]; then
+    ln -sf "$PLATFORM_PROFILE_RUNTIMES"/Makefile "$linkname"
+elif [[ -e "$PLATFORM_RUNTIMES"/Makefile ]]; then
+    ln -sf "$PLATFORM_RUNTIMES"/Makefile "$linkname"
+elif [[ -e "$RUNTIMES"/Makefile ]]; then
+    ln -sf "$RUNTIMES"/Makefile "$linkname"
+fi
+
+# Use the Makefile to install runtimes.
+if [[ -e "$linkname" ]]; then
+    make install
+    make upgrade
+fi

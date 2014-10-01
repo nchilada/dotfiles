@@ -4,5 +4,8 @@
 # Emacs mutexes.
 \#*#
 
+# Makefile symlink (system-specific, like the configs that we put in ~, so it's untracked).
+/Makefile
+
 # OS X Finder preferences.
 .DS_Store
