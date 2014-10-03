@@ -3,9 +3,9 @@
 
 ### Nothing to inherit from.
 
-export PATH=$HOME/bin:$PATH
-export MANPATH=$HOME/man:$MANPATH
-export LD_LIBRARY_PATH=$HOME/lib:$LD_LIBRARY_PATH
+export PATH=$HOME/bin:/usr/local/bin:$PATH
+export MANPATH=$HOME/man:/usr/local/man:$MANPATH
+export LD_LIBRARY_PATH=$HOME/lib:/usr/local/lib:$LD_LIBRARY_PATH
 
 export EDITOR=emacs
 export PAGER=less
