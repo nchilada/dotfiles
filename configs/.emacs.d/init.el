@@ -4,10 +4,16 @@
              '("melpa-stable" . "http://melpa-stable.milkbox.net/packages/"))
 (package-initialize)
 
-(defvar my-packages '(ace-jump-mode))
+(defvar my-packages '(ace-jump-mode
+                      cider
+                      clojure-mode
+                      exec-path-from-shell
+                      projectile))
 (dolist (p my-packages)
   (unless (package-installed-p p)
     (package-install p)))
+
+(exec-path-from-shell-initialize)
 
 (add-to-list 'load-path "~/.emacs.d/")
 ; Now add modules to that directory and specify `(require ________)`
