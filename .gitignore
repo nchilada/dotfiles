@@ -4,6 +4,9 @@
 # Emacs mutexes.
 \#*#
 
+# Locally-installed Emacs packages.
+/configs/.emacs.d/elpa
+
 # Makefile symlink (system-specific, like the configs that we put in ~, so it's untracked).
 /Makefile
 

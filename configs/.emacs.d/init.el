@@ -1,27 +1,30 @@
 
+(require 'package)
+(add-to-list 'package-archives
+             '("melpa-stable" . "http://melpa-stable.milkbox.net/packages/"))
+(package-initialize)
+
+(defvar my-packages '(ace-jump-mode))
+(dolist (p my-packages)
+  (unless (package-installed-p p)
+    (package-install p)))
+
 (add-to-list 'load-path "~/.emacs.d/")
 ; Now add modules to that directory and specify `(require ________)`
 ; or `(load-library ________)` here.
 
-(add-to-list 'load-path "~/.emacs.d/ace-jump-mode/")
-(require 'ace-jump-mode)
 (define-key global-map (kbd "C-x c") 'ace-jump-char-mode) ; Jump to character
 (define-key global-map (kbd "C-x w") 'ace-jump-mode) ; Jump to word
 ;(define-key global-map (kbd "C-x l") 'ace-jump-line-mode) ; Jump to line, conflicts with line count function
-
-;; Now displaying an error (in emacs 24.3)?!
-;(add-to-list 'load-path "~/.emacs.d/icicles/")
-;(require 'icicles)
-;(icy-mode 1)
 
 ; Interactively Do Things offers some sort of filename completion
 ; when opening and switching between buffers.  For switching,
 ; the flex/fuzzy-matching option lets you type in characters
 ; appearing ANYWHERE in the filename.  Use C-s and C-r to scroll
 ; through the options.
-;;(ido-mode 1)
-;;(setq ido-enable-flex-matching t)
-;;(setq ido-everywhere t)
+(ido-mode 1)
+(setq ido-enable-flex-matching t)
+(setq ido-everywhere t)
 ; Display ido results vertically, rather than horizontally
 ;;(setq ido-decorations (quote ("\n-> " "" "\n   " "\n   ..." "[" "]" " [No match]" " [Matched]" " [Not readable]" " [Too big]" " [Confirm]")))
 ;;  (defun ido-disable-line-truncation () (set (make-local-variable 'truncate-lines) nil))
@@ -68,7 +71,6 @@
   (custom-set-faces
    '(default ((t (:inherit nil :stipple nil :background "#22080A" :foreground "#BBBBBB" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 120 :width normal :foundry "apple" :family "Monaco"))))))
 
-
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -89,31 +91,19 @@
 
 (setq tramp-default-method "ssh")
 
-
 ; See http://emacsredux.com/blog/2013/05/22/smarter-navigation-to-the-beginning-of-a-line/
 (defun smarter-move-beginning-of-line (arg)
-  "Move point back to indentation of beginning of line.
-
-Move point to the first non-whitespace character on this line.
-If point is already there, move to the beginning of the line.
-Effectively toggle between the first non-whitespace character and
-the beginning of the line.
-
-If ARG is not nil or 1, move forward ARG - 1 lines first.  If
-point reaches the beginning or end of the buffer, stop there."
+  "Move point to beginning of text, then beginning of line."
   (interactive "^p")
   (setq arg (or arg 1))
-
   ;; Move lines first
   (when (/= arg 1)
     (let ((line-move-visual nil))
       (forward-line (1- arg))))
-
   (let ((orig-point (point)))
     (back-to-indentation)
     (when (= orig-point (point))
       (move-beginning-of-line 1))))
-
 ;; remap C-a to `smarter-move-beginning-of-line'
 (global-set-key [remap move-beginning-of-line]
                 'smarter-move-beginning-of-line)
