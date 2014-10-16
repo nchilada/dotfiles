@@ -13,6 +13,10 @@ export PAGER=less
 # prompt
 export PS1="\u » "
 
+# When listing directory contents, use colors and trailing slashes appropriately.
+alias ls='ls -GF'
+alias tree='tree -CF'
+
 # git autocompletion.
 source ~/.git-completion.bash
 
