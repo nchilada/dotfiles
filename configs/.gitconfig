@@ -21,6 +21,7 @@
 
 [core]
 	editor = emacs
+	excludesfile = /Users/nikhil/.gitignore_global
 
 [push]
 	default = current
