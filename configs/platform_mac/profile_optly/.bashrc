@@ -28,10 +28,9 @@ source "$PARENT/.bashrc"
 export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
 
 # Optimizely dependencies.
-export EC2_HOME=/Users/nikhil/optimizely/out/ec2_api_tools
-export PATH=/Users/nikhil/optimizely/out/ec2_api_tools/bin:$PATH
-export PATH=/Users/nikhil/optimizely/out:$PATH
-export PATH=/Users/nikhil/tools/arcanist/bin:$PATH
+source $HOME/optimizely/.source_this.sh
+source $HOME/.rake_autocomplete.sh
+export PATH=$HOME/tools/arcanist/bin:$PATH
 
 # Optimizely environment variables.
 export SAUCE_USERNAME=NikhilChelliah
