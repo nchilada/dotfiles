@@ -35,10 +35,6 @@ export PATH=$HOME/tools/arcanist/bin:$PATH
 # Optimizely environment variables.
 export SAUCE_USERNAME=NikhilChelliah
 
-# Sets `java`, `javac`, etc. to Oracle Java 7 which was installed with default configs.
-# Unfortunately, I forget why I needed to install Java in the first place. :(
-export JAVA_HOME="`/usr/libexec/java_home -v '1.7.*'`"
-
 # Suppress some warnings from OS 10.8's implementation of sudo.
 # See http://apple.stackexchange.com/a/83566.
 sudo () { ( unset LD_LIBRARY_PATH DYLD_LIBRARY_PATH; exec command sudo $* ) }

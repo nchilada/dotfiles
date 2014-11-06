@@ -28,6 +28,15 @@ source "$PARENT/.bashrc"
 # Use Emacs.app on the command line.
 alias emacs='/Applications/Emacs.app/Contents/MacOS/Emacs -nw $@'
 
+# Hopefully, point to the version of Java installed by
+# runtimes/platform_mac/Makefile:java
+# Could maybe get it from `/usr/libexec/java_home`, but that requires specific
+# versions of XCode.
+export JAVA_HOME=/Library/Java/Home
+export PATH=$JAVA_HOME/bin:$PATH
+export MANPATH=$JAVA_HOME/man:$MANPATH
+export LD_LIBRARY_PATH=$JAVA_HOME/lib:$LD_LIBRARY_PATH
+
 # iTerm2 tab/window titles.
 # - `title` sets the title to the name of the current working directory.
 # - `title Foo bar` sets the title to 'Foo bar'.
