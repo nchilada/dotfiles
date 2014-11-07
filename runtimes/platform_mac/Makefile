@@ -19,6 +19,9 @@ VIRTUALENV := /usr/local/bin/virtualenv # necessary?
 
 TREE := /usr/local/bin/tree
 
+# For commands that ask for confirmation.  See http://stackoverflow.com/a/16745106
+YES := /usr/bin/yes
+
 
 
 # Don't create a file at ./install when running the install command,
@@ -184,15 +187,15 @@ uninstall-python-packages: uninstall-ipython uninstall-requests uninstall-virtua
 
 uninstall-ipython: install-python
 	${PIP} show ipython | grep -i version >/dev/null && \
-		${PIP} uninstall ipython || \
+		${YES} | ${PIP} uninstall ipython || \
 		true
 
 uninstall-requests: install-python
 	${PIP} show requests | grep -i version >/dev/null && \
-		${PIP} uninstall requests || \
+		${YES} | ${PIP} uninstall requests || \
 		true
 
 uninstall-virtualenv: install-python
 	${PIP} show virtualenv | grep -i version >/dev/null && \
-		${PIP} uninstall virtualenv || \
+		${YES} | ${PIP} uninstall virtualenv || \
 		true
