@@ -7,6 +7,8 @@ CASK_ARTIFACT := /usr/local/bin/brew-cask.rb
 CLOJURE := /usr/local/bin/clj
 LEININGEN := /usr/local/bin/lein
 
+GIT := /usr/local/bin/git
+
 JAVA := /usr/local/bin/java
 
 NODE := /usr/local/bin/node
@@ -28,7 +30,7 @@ TREE := /usr/local/bin/tree
 
 # Install runtimes.
 
-install: install-brew install-cask install-clojure-packages install-node-packages install-python-packages install-tree
+install: install-brew install-cask install-clojure-packages install-git install-node-packages install-python-packages install-tree
 
 
 install-brew:
@@ -46,6 +48,11 @@ install-clojure: install-brew install-java
 
 install-clojure-packages: install-clojure
 	true
+
+
+install-git: install-brew
+	type ${GIT} >/dev/null 2>&1 || \
+		${HOMEBREW} install git
 
 
 install-java: install-cask
@@ -90,7 +97,7 @@ update-brew: install-brew
 # Uninstall runtimes.
 
 # Uninstall individual brew packages BEFORE uninstalling brew.
-uninstall: uninstall-clojure uninstall-node uninstall-python uninstall-tree uninstall-cask uninstall-brew
+uninstall: uninstall-clojure uninstall-git uninstall-node uninstall-python uninstall-tree uninstall-cask uninstall-brew
 
 
 uninstall-brew:
@@ -108,6 +115,11 @@ uninstall-clojure: uninstall-clojure-packages
 
 uninstall-clojure-packages: install-clojure
 	true
+
+
+uninstall-git: install-brew
+	type ${GIT} >/dev/null 2>&1 && \
+		${HOMEBREW} uninstall git
 
 
 uninstall-java: install-cask
