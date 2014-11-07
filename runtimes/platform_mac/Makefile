@@ -134,11 +134,13 @@ uninstall-command-line-tools: uninstall-git uninstall-tree
 
 uninstall-git: install-brew
 	type ${GIT} >/dev/null 2>&1 && \
-		${HOMEBREW} uninstall git
+		${HOMEBREW} uninstall git || \
+		true
 
 uninstall-tree: install-brew
 	type ${TREE} >/dev/null 2>&1 && \
-		${HOMEBREW} uninstall tree
+		${HOMEBREW} uninstall tree || \
+		true
 
 
 
@@ -146,14 +148,16 @@ uninstall-java-and-clojure-and-packages: uninstall-clojure-packages uninstall-cl
 
 uninstall-clojure:
 	type ${LEININGEN} >/dev/null 2>&1 && \
-		${HOMEBREW} uninstall leiningen
+		${HOMEBREW} uninstall leiningen || \
+		true
 
 uninstall-clojure-packages: install-clojure
 	true
 
 uninstall-java: install-cask
 	type ${JAVA} >/dev/null 2>&1 && \
-		${CASK} uninstall java
+		${CASK} uninstall java || \
+		true
 
 
 
@@ -161,7 +165,8 @@ uninstall-node-and-packages: uninstall-node-packages uninstall-node
 
 uninstall-node:
 	type ${NODE} >/dev/null 2>&1 && \
-		${HOMEBREW} uninstall node
+		${HOMEBREW} uninstall node || \
+		true
 
 uninstall-node-packages: install-node
 	npm uninstall --prefix ${HOME} collections es6-promise lodash request
@@ -172,7 +177,8 @@ uninstall-python-and-packages: uninstall-python-packages uninstall-python
 
 uninstall-python:
 	type ${PYTHON} >/dev/null 2>&1 && \
-		${HOMEBREW} uninstall python
+		${HOMEBREW} uninstall python || \
+		true
 
 uninstall-python-packages: install-python
 	${PIP} uninstall ipython requests virtualenv
