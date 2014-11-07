@@ -149,6 +149,6 @@ uninstall-python-packages: install-python
 	${PIP} uninstall ipython requests virtualenv
 
 
-uninstall-tree:
+uninstall-tree: install-brew
 	type ${TREE} >/dev/null 2>&1 && \
 		${HOMEBREW} uninstall tree
