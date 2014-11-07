@@ -180,5 +180,19 @@ uninstall-python:
 		${HOMEBREW} uninstall python || \
 		true
 
-uninstall-python-packages: install-python
-	${PIP} uninstall ipython requests virtualenv
+uninstall-python-packages: uninstall-ipython uninstall-requests uninstall-virtualenv
+
+uninstall-ipython: install-python
+	${PIP} show ipython | grep -i version >/dev/null && \
+		${PIP} uninstall ipython || \
+		true
+
+uninstall-requests: install-python
+	${PIP} show requests | grep -i version >/dev/null && \
+		${PIP} uninstall requests || \
+		true
+
+uninstall-virtualenv: install-python
+	${PIP} show virtualenv | grep -i version >/dev/null && \
+		${PIP} uninstall virtualenv || \
+		true
