@@ -20,6 +20,7 @@ VIRTUALENV := /usr/local/bin/virtualenv # necessary?
 TREE := /usr/local/bin/tree
 
 
+
 # Don't create a file at ./install when running the install command,
 # and run the install command even if a file exists at ./install.
 #
@@ -28,10 +29,14 @@ TREE := /usr/local/bin/tree
 .PHONY: install
 
 
+
 # Install runtimes.
 
-install: install-brew install-cask install-clojure-packages install-git install-node-packages install-python-packages install-tree
+install: install-brew-and-cask install-command-line-tools install-java-and-clojure-and-packages install-node-and-packages install-python-and-packages
 
+
+
+install-brew-and-cask: install-brew install-cask
 
 install-brew:
 	type ${HOMEBREW} >/dev/null 2>&1 || \
@@ -42,6 +47,21 @@ install-cask: install-brew
 		${HOMEBREW} install caskroom/cask/brew-cask
 
 
+
+install-command-line-tools: install-git install-tree
+
+install-git: install-brew
+	type ${GIT} >/dev/null 2>&1 || \
+		${HOMEBREW} install git
+
+install-tree: install-brew
+	type ${TREE} >/dev/null 2>&1 || \
+		${HOMEBREW} install tree
+
+
+
+install-java-and-clojure-and-packages: install-clojure-packages
+
 install-clojure: install-brew install-java
 	type ${LEININGEN} >/dev/null 2>&1 || \
 		${HOMEBREW} install leiningen
@@ -49,16 +69,13 @@ install-clojure: install-brew install-java
 install-clojure-packages: install-clojure
 	true
 
-
-install-git: install-brew
-	type ${GIT} >/dev/null 2>&1 || \
-		${HOMEBREW} install git
-
-
 install-java: install-cask
 	type ${JAVA} >/dev/null 2>&1 || \
 		${CASK} install java
 
+
+
+install-node-and-packages: install-node-packages
 
 install-node: install-brew
 	type ${NODE} >/dev/null 2>&1 || \
@@ -68,6 +85,9 @@ install-node-packages: install-node
 	npm install --prefix ${HOME} collections es6-promise lodash request
 
 
+
+install-python-and-packages: install-python-packages
+
 install-python: install-brew
 	type ${PYTHON} >/dev/null 2>&1 || \
 		${HOMEBREW} install python
@@ -75,10 +95,6 @@ install-python: install-brew
 install-python-packages: install-python
 	${PIP} install ipython requests virtualenv
 
-
-install-tree: install-brew
-	type ${TREE} >/dev/null 2>&1 || \
-		${HOMEBREW} install tree
 
 
 # Upgrade runtimes.
@@ -94,11 +110,15 @@ update-brew: install-brew
 	${HOMEBREW} update
 
 
+
 # Uninstall runtimes.
 
 # Uninstall individual brew packages BEFORE uninstalling brew.
-uninstall: uninstall-clojure uninstall-git uninstall-node uninstall-python uninstall-tree uninstall-cask uninstall-brew
+uninstall: uninstall-command-line-tools uninstall-java-and-clojure-and-packages uninstall-node-and-packages uninstall-python-and-packages uninstall-brew-and-cask
 
+
+
+uninstall-brew-and-cask: uninstall-cask uninstall-brew
 
 uninstall-brew:
 	type ${HOMEBREW} >/dev/null 2>&1 && \
@@ -109,46 +129,50 @@ uninstall-cask: install-brew
 		${HOMEBREW} uninstall caskroom/cask/brew-cask
 
 
-uninstall-clojure: uninstall-clojure-packages
+
+uninstall-command-line-tools: uninstall-git uninstall-tree
+
+uninstall-git: install-brew
+	type ${GIT} >/dev/null 2>&1 && \
+		${HOMEBREW} uninstall git
+
+uninstall-tree: install-brew
+	type ${TREE} >/dev/null 2>&1 && \
+		${HOMEBREW} uninstall tree
+
+
+
+uninstall-java-and-clojure-and-packages: uninstall-clojure-packages uninstall-clojure uninstall-java
+
+uninstall-clojure:
 	type ${LEININGEN} >/dev/null 2>&1 && \
 		${HOMEBREW} uninstall leiningen
 
 uninstall-clojure-packages: install-clojure
 	true
 
-
-uninstall-git: install-brew
-	type ${GIT} >/dev/null 2>&1 && \
-		${HOMEBREW} uninstall git
-
-
 uninstall-java: install-cask
 	type ${JAVA} >/dev/null 2>&1 && \
 		${CASK} uninstall java
 
 
-uninstall-node: uninstall-node-packages
+
+uninstall-node-and-packages: uninstall-node-packages uninstall-node
+
+uninstall-node:
 	type ${NODE} >/dev/null 2>&1 && \
 		${HOMEBREW} uninstall node
 
-# If node is already uninstalled (likely due to extramakefile hijinks),
-# then we'll have to install it, and this command will have the side-effect of
-# having installed node.
 uninstall-node-packages: install-node
 	npm uninstall --prefix ${HOME} collections es6-promise lodash request
 
 
-uninstall-python: uninstall-python-packages
+
+uninstall-python-and-packages: uninstall-python-packages uninstall-python
+
+uninstall-python:
 	type ${PYTHON} >/dev/null 2>&1 && \
 		${HOMEBREW} uninstall python
 
-# If python is already uninstalled (likely due to extramakefile hijinks),
-# then we'll have to install it, and this command will have the side-effect of
-# having installed python.
 uninstall-python-packages: install-python
 	${PIP} uninstall ipython requests virtualenv
-
-
-uninstall-tree: install-brew
-	type ${TREE} >/dev/null 2>&1 && \
-		${HOMEBREW} uninstall tree
