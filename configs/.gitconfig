@@ -12,6 +12,7 @@
     df = diff
     lg = log
     pk = cherry-pick
+    rb = rebase
     sh = show
     st = status
     undo-commit = reset --soft HEAD^
