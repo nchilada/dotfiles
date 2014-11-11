@@ -4,17 +4,37 @@
 
 [alias]
     ad = add
+    adp = add --patch
+
     bl = blame
+
     br = branch
+
     bs = bisect
+
     ch = checkout
+    chb = checkout -b
+
     cm = commit
+
     df = diff
+
     lg = log
+
     pk = cherry-pick
+
     rb = rebase
+    rbc = rebase --continue
+    rbo = rebase --onto
+
     sh = show
+
     st = status
+
+    # See https://git.wiki.kernel.org/index.php/Aliases#Getting_pretty_logs
+    tr = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+    tree = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+
     undo-commit = reset --soft HEAD^
 
 [color]
