@@ -9,6 +9,7 @@
     bl = blame
 
     br = branch
+    brd = branch --delete
 
     bs = bisect
 
@@ -16,18 +17,26 @@
     chb = checkout -b
 
     cm = commit
+    cma = commit --amend
+    cmane = commit --amend --no-edit
+    cmm = commit --message
 
     df = diff
+    dfc = diff --cached
+    dfno = diff --name-only
 
     lg = log
+    lgno = log --name-only
 
     pk = cherry-pick
 
     rb = rebase
     rbc = rebase --continue
+    rbi = rebase --interactive
     rbo = rebase --onto
 
     sh = show
+    shno = show --name-only
 
     st = status
 
