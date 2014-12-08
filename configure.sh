@@ -95,9 +95,3 @@ elif [[ -e "$PLATFORM_RUNTIMES"/Makefile ]]; then
 elif [[ -e "$RUNTIMES"/Makefile ]]; then
     ln -sf "$RUNTIMES"/Makefile "$linkname"
 fi
-
-# Use the Makefile to install runtimes.
-if [[ -e "$linkname" ]]; then
-    make install
-    make upgrade
-fi
