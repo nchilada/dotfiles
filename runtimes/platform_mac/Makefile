@@ -35,7 +35,7 @@ YES := /usr/bin/yes
 
 # Install runtimes.
 
-install: install-brew-and-cask install-command-line-tools install-java-and-clojure-and-packages install-node-and-packages install-python-and-packages
+install: install-brew-and-cask install-cask-apps install-command-line-tools install-java-and-clojure-and-packages install-node-and-packages install-python-and-packages
 
 
 
@@ -48,6 +48,29 @@ install-brew:
 install-cask: install-brew
 	type ${CASK_ARTIFACT} >/dev/null 2>&1 || \
 		${HOMEBREW} install caskroom/cask/brew-cask
+
+
+
+install-cask-apps: install-cask
+	${CASK} install \
+		acorn `# Should track the license in this repo.` \
+		clipmenu \
+		dwarf-fortress \
+		emacs \
+		evernote \
+		firefox \
+		flux \
+		free-ruler \
+		google-chrome \
+		iterm2 \
+		jitouch \
+		nosleep \
+		onepassword `# Should get a license and track it in the repo.` \
+		selfcontrol \
+		skype \
+		spectacle \
+		sourcetree `# Should get a license and track it in the repo.` \
+		witch `# Should track the license in this repo.` \
 
 
 
@@ -117,7 +140,7 @@ update-brew: install-brew
 # Uninstall runtimes.
 
 # Uninstall individual brew packages BEFORE uninstalling brew.
-uninstall: uninstall-command-line-tools uninstall-java-and-clojure-and-packages uninstall-node-and-packages uninstall-python-and-packages uninstall-brew-and-cask
+uninstall: uninstall-cask-apps uninstall-command-line-tools uninstall-java-and-clojure-and-packages uninstall-node-and-packages uninstall-python-and-packages uninstall-brew-and-cask
 
 
 
@@ -130,6 +153,29 @@ uninstall-brew:
 uninstall-cask: install-brew
 	type ${CASK_ARTIFACT} >/dev/null 2>&1 && \
 		${HOMEBREW} uninstall caskroom/cask/brew-cask
+
+
+
+uninstall-cask-apps: install-cask
+	${CASK} uninstall \
+		acorn \
+		clipmenu \
+		dwarf-fortress \
+		emacs \
+		evernote \
+		firefox \
+		flux \
+		free-ruler \
+		google-chrome \
+		iterm2 \
+		jitouch \
+		nosleep \
+		onepassword \
+		selfcontrol \
+		skype \
+		spectacle \
+		sourcetree \
+		witch \
 
 
 
