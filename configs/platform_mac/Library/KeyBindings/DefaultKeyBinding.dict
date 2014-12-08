@@ -1,0 +1,40 @@
+/* Thanks to http://superuser.com/a/381389
+ * Info on all the keybindings at http://sbnes.livejournal.com/3725.html
+ * Look in NSEvent.h for function key names
+ */
+
+{
+"^_" = "undo:";
+"^/" = "undo:";
+
+"^ " = "setMark:";           /* Doesn't seem to work. :( */
+"^w" = "cut:";
+"~w" = "copy:";
+"^y" = "paste:";             /* Actually there by default. */
+
+"~[" = "moveToBeginningOfLine:";           /* Just deactivates the symbol insertion, so I can rebind it in IntelliJ. */
+"~]" = "moveToEndOfLine:";           /* Just deactivates the symbol insertion, so I can rebind it in IntelliJ. */
+"~{" = "moveToBeginningOfLine:";           /* Just deactivates the symbol insertion, so I can rebind it in IntelliJ. */
+"~}" = "moveToEndOfLine:";           /* Just deactivates the symbol insertion, so I can rebind it in IntelliJ. */
+"~x" = "setMark:";
+"~-" = "setMark:";
+"~0" = "setMark:";           /* Just deactivates the symbol insertion, so I can rebind it in IntelliJ. */
+"~1" = "setMark:";
+"~2" = "setMark:";
+"~3" = "setMark:";
+"~4" = "setMark:";
+"~5" = "setMark:";
+"~6" = "setMark:";
+"~7" = "setMark:";
+"~8" = "setMark:";
+"~9" = "setMark:";
+"^g" = "setMark:";
+"~;" = "setMark:";
+/*   "^\UF708" = "setMark:";      F5 */
+
+"~d" = "deleteWordForward:";
+"~f" = "moveWordForward:";
+"~b" = "moveWordBackward:";
+"~<" = "moveToBeginningOfDocument:";
+"~>" = "moveToEndOfDocument:";
+}
