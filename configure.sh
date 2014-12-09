@@ -43,7 +43,7 @@ for filename in "$CONFIGS"/*; do
 
    # For simple files, create a symlink directly from from ~/.
    # DANGER: existing entries in ~/ will be lost forever!
-   if [[ -f "$filename" || $(basename "$filename") == .emacs.d ]]; then
+   if [[ -f "$filename" || -L "$filename" || $(basename "$filename") == .emacs.d ]]; then
        linkname=$HOME/$(basename "$filename")
        echo "$linkname ----------------> $filename"
        ln -sf "$filename" "$linkname"
@@ -53,7 +53,7 @@ for filename in "$CONFIGS"/*; do
    elif [[ -d "$filename" ]]; then
        topname="$filename"
        IFS=$'\n'
-       for filename in $(find "$topname" -type f); do
+       for filename in $(find "$topname" -type f -o -type l); do
            linkname=$(echo "$filename" | sed "s:.*/$(basename "$topname")/:$HOME/$(basename "$topname")/:")
            echo "$linkname ----------------> $filename"
            mkdir -p $(dirname "$linkname")
@@ -77,7 +77,7 @@ for filename in "$PLATFORM_CONFIGS"/*; do
 
    # For simple files, create a symlink directly from from ~/.
    # DANGER: existing entries in ~/ will be lost forever!
-   if [[ -f "$filename" || $(basename "$filename") == .emacs.d ]]; then
+   if [[ -f "$filename" || -L "$filename" || $(basename "$filename") == .emacs.d ]]; then
        linkname=$HOME/$(basename "$filename")
        echo "$linkname ----------------> $filename"
        ln -sf "$filename" "$linkname"
@@ -87,7 +87,7 @@ for filename in "$PLATFORM_CONFIGS"/*; do
    elif [[ -d "$filename" ]]; then
        topname="$filename"
        IFS=$'\n'
-       for filename in $(find "$topname" -type f); do
+       for filename in $(find "$topname" -type f -o -type l); do
            linkname=$(echo "$filename" | sed "s:.*/$(basename "$topname")/:$HOME/$(basename "$topname")/:")
            echo "$linkname ----------------> $filename"
            mkdir -p $(dirname "$linkname")
@@ -107,7 +107,7 @@ for filename in "$PLATFORM_PROFILE_CONFIGS"/*; do
 
    # For simple files, create a symlink directly from from ~/.
    # DANGER: existing entries in ~/ will be lost forever!
-   if [[ -f "$filename" || $(basename "$filename") == .emacs.d ]]; then
+   if [[ -f "$filename" || -L "$filename" || $(basename "$filename") == .emacs.d ]]; then
        linkname=$HOME/$(basename "$filename")
        echo "$linkname ----------------> $filename"
        ln -sf "$filename" "$linkname"
@@ -117,7 +117,7 @@ for filename in "$PLATFORM_PROFILE_CONFIGS"/*; do
    elif [[ -d "$filename" ]]; then
        topname="$filename"
        IFS=$'\n'
-       for filename in $(find "$topname" -type f); do
+       for filename in $(find "$topname" -type f -o -type l); do
            linkname=$(echo "$filename" | sed "s:.*/$(basename "$topname")/:$HOME/$(basename "$topname")/:")
            echo "$linkname ----------------> $filename"
            mkdir -p $(dirname "$linkname")
