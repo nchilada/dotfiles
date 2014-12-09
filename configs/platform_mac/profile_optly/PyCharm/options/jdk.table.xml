@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application>
+  <component name="ProjectJdkTable">
+    <jdk version="2">
+      <name value="Python 2.5.6 (/System/Library/Frameworks/Python.framework/Versions/2.5/bin/python)" />
+      <type value="Python SDK" />
+      <version value="Python 2.5.6" />
+      <homePath value="/System/Library/Frameworks/Python.framework/Versions/2.5/bin/python" />
+      <roots>
+        <classPath>
+          <root type="composite">
+            <root type="simple" url="file:///System/Library/Frameworks/Python.framework/Versions/2.5/lib/python2.5" />
+            <root type="simple" url="file:///System/Library/Frameworks/Python.framework/Versions/2.5/lib/python2.5/plat-darwin" />
+            <root type="simple" url="file:///System/Library/Frameworks/Python.framework/Versions/2.5/lib/python2.5/plat-mac" />
+            <root type="simple" url="file:///System/Library/Frameworks/Python.framework/Versions/2.5/lib/python2.5/plat-mac/lib-scriptpackages" />
+            <root type="simple" url="file:///System/Library/Frameworks/Python.framework/Versions/2.5/Extras/lib/python" />
+            <root type="simple" url="file:///System/Library/Frameworks/Python.framework/Versions/2.5/lib/python2.5/lib-tk" />
+            <root type="simple" url="file:///System/Library/Frameworks/Python.framework/Versions/2.5/lib/python2.5/lib-dynload" />
+            <root type="simple" url="file:///Library/Python/2.5/site-packages" />
+            <root type="simple" url="file:///System/Library/Frameworks/Python.framework/Versions/2.5/Extras/lib/python/PyObjC" />
+            <root type="simple" url="file://$USER_HOME$/Library/Caches/PyCharm20/python_stubs/337905984" />
+          </root>
+        </classPath>
+        <sourcePath>
+          <root type="composite" />
+        </sourcePath>
+      </roots>
+      <additional />
+    </jdk>
+    <jdk version="2">
+      <name value="Python 2.7.6 (~/optimizely/out/python2-2.7.6/out/bin/python2.7)" />
+      <type value="Python SDK" />
+      <version value="Python 2.7.6" />
+      <homePath value="$USER_HOME$/optimizely/out/python2-2.7.6/out/bin/python2.7" />
+      <roots>
+        <classPath>
+          <root type="composite">
+            <root type="simple" url="file://$USER_HOME$/optimizely/out/python2-2.7.6/out/lib/python2.7" />
+            <root type="simple" url="file://$USER_HOME$/optimizely/out/python2-2.7.6/out/lib/python2.7/plat-darwin" />
+            <root type="simple" url="file://$USER_HOME$/optimizely/out/python2-2.7.6/out/lib/python2.7/plat-mac" />
+            <root type="simple" url="file://$USER_HOME$/optimizely/out/python2-2.7.6/out/lib/python2.7/plat-mac/lib-scriptpackages" />
+            <root type="simple" url="file://$USER_HOME$/optimizely/out/python2-2.7.6/out/lib/python2.7/lib-tk" />
+            <root type="simple" url="file://$USER_HOME$/optimizely/out/python2-2.7.6/out/lib/python2.7/lib-dynload" />
+            <root type="simple" url="file://$USER_HOME$/optimizely/out/python2-2.7.6/out/lib/python2.7/site-packages" />
+            <root type="simple" url="file://$USER_HOME$/optimizely/out/closure_library-r2029/closure/bin/build" />
+            <root type="simple" url="file://$USER_HOME$/optimizely/out/gae" />
+            <root type="simple" url="file://$USER_HOME$/optimizely/out/gae/lib/antlr3" />
+            <root type="simple" url="file://$USER_HOME$/optimizely/out/gae/lib/django-0.96" />
+            <root type="simple" url="file://$USER_HOME$/optimizely/out/gae/lib/fancy_urllib" />
+            <root type="simple" url="file://$USER_HOME$/optimizely/out/gae/lib/ipaddr" />
+            <root type="simple" url="file://$USER_HOME$/optimizely/out/gae/lib/jinja2-2.6" />
+            <root type="simple" url="file://$USER_HOME$/optimizely/out/gae/lib/protorpc-1.0" />
+            <root type="simple" url="file://$USER_HOME$/optimizely/out/gae/lib/webob_0_9" />
+            <root type="simple" url="file://$USER_HOME$/optimizely/out/gae/lib/webapp2-2.5.2" />
+            <root type="simple" url="file://$USER_HOME$/optimizely/out/gae/lib/yaml/lib" />
+            <root type="simple" url="file://$USER_HOME$/optimizely/out/gae/lib/simplejson" />
+            <root type="simple" url="file://$USER_HOME$/optimizely/out/python2-2.7.6/out/lib/python2.7/site-packages/newrelic-1.10.0.28" />
+            <root type="simple" url="file://$USER_HOME$/optimizely/out/waf-1.7.0" />
+            <root type="simple" url="file://$USER_HOME$/Library/Caches/PyCharm20/python_stubs/384736267" />
+          </root>
+        </classPath>
+        <sourcePath>
+          <root type="composite" />
+        </sourcePath>
+      </roots>
+      <additional />
+    </jdk>
+    <jdk version="2">
+      <name value="Python 2.7.6 virtualenv at ~/optimizely/.virtualenv/www/dev" />
+      <type value="Python SDK" />
+      <version value="Python 2.7.6" />
+      <homePath value="$USER_HOME$/optimizely/.virtualenv/www/dev/bin/python" />
+      <roots>
+        <classPath>
+          <root type="composite">
+            <root type="simple" url="file://$USER_HOME$/optimizely/.virtualenv/www/dev/lib/python2.7" />
+            <root type="simple" url="file://$USER_HOME$/optimizely/.virtualenv/www/dev/lib/python2.7/lib-dynload" />
+            <root type="simple" url="file://$USER_HOME$/optimizely/out/python2-2.7.6/out/lib/python2.7" />
+            <root type="simple" url="file://$USER_HOME$/optimizely/out/python2-2.7.6/out/lib/python2.7/plat-darwin" />
+            <root type="simple" url="file://$USER_HOME$/optimizely/out/python2-2.7.6/out/lib/python2.7/lib-tk" />
+            <root type="simple" url="file://$USER_HOME$/optimizely/out/python2-2.7.6/out/lib/python2.7/plat-mac" />
+            <root type="simple" url="file://$USER_HOME$/optimizely/out/python2-2.7.6/out/lib/python2.7/plat-mac/lib-scriptpackages" />
+            <root type="simple" url="file://$USER_HOME$/optimizely/.virtualenv/www/dev/lib/python2.7/site-packages" />
+            <root type="simple" url="file://$USER_HOME$/Library/Caches/PyCharm20/python_stubs/-1401368452" />
+          </root>
+        </classPath>
+        <sourcePath>
+          <root type="composite" />
+        </sourcePath>
+      </roots>
+      <additional />
+    </jdk>
+  </component>
+</application>
+
