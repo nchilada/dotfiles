@@ -40,11 +40,27 @@ for filename in "$CONFIGS"/*; do
    if [ $exit_status != 0 ]; then
        continue
    fi
-   # Create a symlink from ~/ directly to the file.
+
+   # For simple files, create a symlink directly from from ~/.
    # DANGER: existing entries in ~/ will be lost forever!
-   linkname=~/`basename "$filename"`
-   echo "$linkname ----------------> $filename"
-   ln -sf "$filename" "$linkname"
+   if [[ -f "$filename" || $(basename "$filename") == .emacs.d ]]; then
+       linkname=$HOME/$(basename "$filename")
+       echo "$linkname ----------------> $filename"
+       ln -sf "$filename" "$linkname"
+
+   # Within directories, symlink simple files.
+   # DANGER: existing entries within those directories will be lost forever!
+   elif [[ -d "$filename" ]]; then
+       topname="$filename"
+       IFS=$'\n'
+       for filename in $(find "$topname" -type f); do
+           linkname=$(echo "$filename" | sed "s:.*/$(basename "$topname")/:$HOME/$(basename "$topname")/:")
+           echo "$linkname ----------------> $filename"
+           mkdir -p $(dirname "$linkname")
+           ln -sf "$filename" "$linkname"
+       done
+       unset IFS
+   fi
 done
 
 for filename in "$PLATFORM_CONFIGS"/*; do
@@ -58,11 +74,27 @@ for filename in "$PLATFORM_CONFIGS"/*; do
    if [ $exit_status != 0 ]; then
        continue
    fi
-   # Create a symlink from ~/ directly to the file.
+
+   # For simple files, create a symlink directly from from ~/.
    # DANGER: existing entries in ~/ will be lost forever!
-   linkname=~/`basename "$filename"`
-   echo "$linkname ----------------> $filename"
-   ln -sf "$filename" "$linkname"
+   if [[ -f "$filename" || $(basename "$filename") == .emacs.d ]]; then
+       linkname=$HOME/$(basename "$filename")
+       echo "$linkname ----------------> $filename"
+       ln -sf "$filename" "$linkname"
+
+   # Within directories, symlink simple files.
+   # DANGER: existing entries within those directories will be lost forever!
+   elif [[ -d "$filename" ]]; then
+       topname="$filename"
+       IFS=$'\n'
+       for filename in $(find "$topname" -type f); do
+           linkname=$(echo "$filename" | sed "s:.*/$(basename "$topname")/:$HOME/$(basename "$topname")/:")
+           echo "$linkname ----------------> $filename"
+           mkdir -p $(dirname "$linkname")
+           ln -sf "$filename" "$linkname"
+       done
+       unset IFS
+   fi
 done
 
 for filename in "$PLATFORM_PROFILE_CONFIGS"/*; do
@@ -72,11 +104,27 @@ for filename in "$PLATFORM_PROFILE_CONFIGS"/*; do
    if [ $exit_status != 0 ]; then
        continue
    fi
-   # Create a symlink from ~/ directly to the file.
+
+   # For simple files, create a symlink directly from from ~/.
    # DANGER: existing entries in ~/ will be lost forever!
-   linkname=~/`basename "$filename"`
-   echo "$linkname ----------------> $filename"
-   ln -sf "$filename" "$linkname"
+   if [[ -f "$filename" || $(basename "$filename") == .emacs.d ]]; then
+       linkname=$HOME/$(basename "$filename")
+       echo "$linkname ----------------> $filename"
+       ln -sf "$filename" "$linkname"
+
+   # Within directories, symlink simple files.
+   # DANGER: existing entries within those directories will be lost forever!
+   elif [[ -d "$filename" ]]; then
+       topname="$filename"
+       IFS=$'\n'
+       for filename in $(find "$topname" -type f); do
+           linkname=$(echo "$filename" | sed "s:.*/$(basename "$topname")/:$HOME/$(basename "$topname")/:")
+           echo "$linkname ----------------> $filename"
+           mkdir -p $(dirname "$linkname")
+           ln -sf "$filename" "$linkname"
+       done
+       unset IFS
+   fi
 done
 
 
