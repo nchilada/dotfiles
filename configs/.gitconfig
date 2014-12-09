@@ -10,6 +10,7 @@
 
     br = branch
     brd = branch --delete
+    brD = branch -D
 
     bs = bisect
 
