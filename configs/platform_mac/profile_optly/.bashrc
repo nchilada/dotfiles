@@ -30,6 +30,7 @@ export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
 # Optimizely dependencies.
 source $HOME/optimizely/.source_this.sh
 source $HOME/.optimizely/.rake_autocomplete.sh
+export PATH=$HOME/frontend/node_modules/.bin:$PATH
 export PATH=$HOME/tools/arcanist/bin:$PATH
 
 # Optimizely environment variables.
