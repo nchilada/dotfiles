@@ -1,12 +1,13 @@
 
 (require 'package)
 (add-to-list 'package-archives
-             '("melpa-stable" . "http://melpa-stable.milkbox.net/packages/"))
+             '("melpa" . "http://melpa.org/packages/") t)
 (package-initialize)
 
 (defvar my-packages '(ace-jump-mode
                       cider
                       clojure-mode
+                      elm-mode
                       exec-path-from-shell
                       projectile))
 (dolist (p my-packages)
