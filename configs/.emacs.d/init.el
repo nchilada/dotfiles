@@ -15,10 +15,6 @@
 
 (exec-path-from-shell-initialize)
 
-(add-to-list 'load-path "~/.emacs.d/")
-; Now add modules to that directory and specify `(require ________)`
-; or `(load-library ________)` here.
-
 (define-key global-map (kbd "C-x c") 'ace-jump-char-mode) ; Jump to character
 (define-key global-map (kbd "C-x w") 'ace-jump-mode) ; Jump to word
 ;(define-key global-map (kbd "C-x l") 'ace-jump-line-mode) ; Jump to line, conflicts with line count function
