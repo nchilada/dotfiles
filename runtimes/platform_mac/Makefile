@@ -7,6 +7,8 @@ CASK_ARTIFACT := /usr/local/bin/brew-cask.rb
 CLOJURE := /usr/local/bin/clj
 LEININGEN := /usr/local/bin/lein
 
+ELM := /usr/local/bin/elm-make
+
 GIT := /usr/local/bin/git
 
 JAVA := /usr/local/bin/java
@@ -35,7 +37,7 @@ YES := /usr/bin/yes
 
 # Install runtimes.
 
-install: install-brew-and-cask install-cask-apps install-command-line-tools install-java-and-clojure-and-packages install-node-and-packages install-python-and-packages
+install: install-brew-and-cask install-cask-apps install-command-line-tools install-elm-and-packages install-java-and-clojure-and-packages install-node-and-packages install-python-and-packages
 
 
 
@@ -83,6 +85,17 @@ install-git: install-brew
 install-tree: install-brew
 	type ${TREE} >/dev/null 2>&1 || \
 		${HOMEBREW} install tree
+
+
+
+install-elm-and-packages: install-elm-packages
+
+install-elm: install-cask
+	type ${ELM} >/dev/null 2>&1 || \
+		${CASK} install elm-platform
+
+install-elm-packages: install-elm
+	true
 
 
 
@@ -140,7 +153,7 @@ update-brew: install-brew
 # Uninstall runtimes.
 
 # Uninstall individual brew packages BEFORE uninstalling brew.
-uninstall: uninstall-cask-apps uninstall-command-line-tools uninstall-java-and-clojure-and-packages uninstall-node-and-packages uninstall-python-and-packages uninstall-brew-and-cask
+uninstall: uninstall-cask-apps uninstall-command-line-tools uninstall-elm-and-packages uninstall-java-and-clojure-and-packages uninstall-node-and-packages uninstall-python-and-packages uninstall-brew-and-cask
 
 
 
@@ -193,9 +206,21 @@ uninstall-tree: install-brew
 
 
 
+uninstall-elm-and-packages: uninstall-elm-packages uninstall-elm
+
+uninstall-elm:
+	type ${ELM} >/dev/null 2>&1 && \
+		${CASK} uninstall elm-platform || \
+		true
+
+uninstall-elm-packages: install-elm
+	true
+
+
+
 uninstall-java-and-clojure-and-packages: uninstall-clojure-packages uninstall-clojure uninstall-java
 
-uninstall-clojure:
+uninstall-clojure: install-brew
 	type ${LEININGEN} >/dev/null 2>&1 && \
 		${HOMEBREW} uninstall leiningen || \
 		true
