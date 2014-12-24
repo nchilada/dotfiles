@@ -1,13 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <application>
   <component name="UISettings">
-    <option name="SHOW_MEMORY_INDICATOR" value="false" />
-    <option name="SHOW_MAIN_TOOLBAR" value="false" />
     <option name="SHOW_CLOSE_BUTTON" value="false" />
     <option name="ACTIVATE_MRU_EDITOR_ON_CLOSE" value="true" />
     <option name="MAX_LOOKUP_LIST_HEIGHT" value="5" />
     <option name="MARK_MODIFIED_TABS_WITH_ASTERISK" value="true" />
-    <option name="SHOW_DIRECTORY_FOR_NON_UNIQUE_FILENAMES" value="true" />
   </component>
 </application>
-
