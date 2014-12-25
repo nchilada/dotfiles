@@ -57,6 +57,7 @@ install-cask-apps: install-cask
 	${CASK} install \
 		acorn `# Should track the license in this repo.` \
 		clipmenu \
+		dropbox \
 		dwarf-fortress \
 		emacs \
 		evernote \
@@ -173,6 +174,7 @@ uninstall-cask-apps: install-cask
 	${CASK} uninstall \
 		acorn \
 		clipmenu \
+		dropbox \
 		dwarf-fortress \
 		emacs \
 		evernote \
