@@ -67,7 +67,7 @@ install-cask-apps: install-cask
 		iterm2 \
 		jitouch \
 		nosleep \
-		onepassword `# Should get a license and track it in the repo.` \
+		1password `# Should get a license and track it in the repo.` \
 		selfcontrol \
 		skype \
 		spectacle \
@@ -183,7 +183,7 @@ uninstall-cask-apps: install-cask
 		iterm2 \
 		jitouch \
 		nosleep \
-		onepassword \
+		1password \
 		selfcontrol \
 		skype \
 		spectacle \
