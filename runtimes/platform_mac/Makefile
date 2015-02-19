@@ -56,6 +56,7 @@ install-cask: install-brew
 install-cask-apps: install-cask
 	${CASK} install \
 		acorn `# Should track the license in this repo.` \
+		atom \
 		clipmenu \
 		dropbox \
 		dwarf-fortress \
@@ -173,6 +174,7 @@ uninstall-cask: install-brew
 uninstall-cask-apps: install-cask
 	${CASK} uninstall \
 		acorn \
+		atom \
 		clipmenu \
 		dropbox \
 		dwarf-fortress \
