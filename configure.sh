@@ -46,7 +46,7 @@ for filename in "$CONFIGS"/*; do
    if [[ -f "$filename" || -L "$filename" || $(basename "$filename") == .emacs.d ]]; then
        linkname=$HOME/$(basename "$filename")
        echo "$linkname ----------------> $filename"
-       ln -sf "$filename" "$linkname"
+       ln -sfn "$filename" "$linkname"
 
    # Within directories, symlink simple files.
    # DANGER: existing entries within those directories will be lost forever!
@@ -57,7 +57,7 @@ for filename in "$CONFIGS"/*; do
            linkname=$(echo "$filename" | sed "s:.*/$(basename "$topname")/:$HOME/$(basename "$topname")/:")
            echo "$linkname ----------------> $filename"
            mkdir -p $(dirname "$linkname")
-           ln -sf "$filename" "$linkname"
+           ln -sfn "$filename" "$linkname"
        done
        unset IFS
    fi
@@ -80,7 +80,7 @@ for filename in "$PLATFORM_CONFIGS"/*; do
    if [[ -f "$filename" || -L "$filename" || $(basename "$filename") == .emacs.d ]]; then
        linkname=$HOME/$(basename "$filename")
        echo "$linkname ----------------> $filename"
-       ln -sf "$filename" "$linkname"
+       ln -sfn "$filename" "$linkname"
 
    # Within directories, symlink simple files.
    # DANGER: existing entries within those directories will be lost forever!
@@ -91,7 +91,7 @@ for filename in "$PLATFORM_CONFIGS"/*; do
            linkname=$(echo "$filename" | sed "s:.*/$(basename "$topname")/:$HOME/$(basename "$topname")/:")
            echo "$linkname ----------------> $filename"
            mkdir -p $(dirname "$linkname")
-           ln -sf "$filename" "$linkname"
+           ln -sfn "$filename" "$linkname"
        done
        unset IFS
    fi
@@ -110,7 +110,7 @@ for filename in "$PLATFORM_PROFILE_CONFIGS"/*; do
    if [[ -f "$filename" || -L "$filename" || $(basename "$filename") == .emacs.d ]]; then
        linkname=$HOME/$(basename "$filename")
        echo "$linkname ----------------> $filename"
-       ln -sf "$filename" "$linkname"
+       ln -sfn "$filename" "$linkname"
 
    # Within directories, symlink simple files.
    # DANGER: existing entries within those directories will be lost forever!
@@ -121,7 +121,7 @@ for filename in "$PLATFORM_PROFILE_CONFIGS"/*; do
            linkname=$(echo "$filename" | sed "s:.*/$(basename "$topname")/:$HOME/$(basename "$topname")/:")
            echo "$linkname ----------------> $filename"
            mkdir -p $(dirname "$linkname")
-           ln -sf "$filename" "$linkname"
+           ln -sfn "$filename" "$linkname"
        done
        unset IFS
    fi
@@ -137,9 +137,9 @@ PLATFORM_PROFILE_RUNTIMES="$PLATFORM_RUNTIMES/profile_$2"
 # Create a symlink from ./Makefile to the most specific Makefile.
 linkname=./Makefile
 if [[ -e "$PLATFORM_PROFILE_RUNTIMES"/Makefile ]]; then
-    ln -sf "$PLATFORM_PROFILE_RUNTIMES"/Makefile "$linkname"
+    ln -sfn "$PLATFORM_PROFILE_RUNTIMES"/Makefile "$linkname"
 elif [[ -e "$PLATFORM_RUNTIMES"/Makefile ]]; then
-    ln -sf "$PLATFORM_RUNTIMES"/Makefile "$linkname"
+    ln -sfn "$PLATFORM_RUNTIMES"/Makefile "$linkname"
 elif [[ -e "$RUNTIMES"/Makefile ]]; then
-    ln -sf "$RUNTIMES"/Makefile "$linkname"
+    ln -sfn "$RUNTIMES"/Makefile "$linkname"
 fi
