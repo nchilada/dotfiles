@@ -69,6 +69,7 @@ install-cask-apps: install-cask
 		google-chrome \
 		iterm2 \
 		jitouch \
+		lighttable \
 		nosleep \
 		1password `# Should get a license and track it in the repo.` \
 		selfcontrol \
@@ -188,6 +189,7 @@ uninstall-cask-apps: install-cask
 		google-chrome \
 		iterm2 \
 		jitouch \
+		lighttable \
 		nosleep \
 		1password \
 		selfcontrol \
