@@ -69,6 +69,7 @@ install-cask-apps: install-cask
 		flux \
 		free-ruler \
 		google-chrome \
+		gpgtools \
 		iterm2 \
 		jitouch \
 		lighttable \
@@ -193,6 +194,7 @@ uninstall-cask-apps: install-cask
 		flux \
 		free-ruler \
 		google-chrome \
+		gpgtools \
 		iterm2 \
 		jitouch \
 		lighttable \
