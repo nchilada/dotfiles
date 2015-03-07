@@ -12,3 +12,6 @@
 
 # OS X Finder preferences.
 .DS_Store
+
+# Password.
+/password.txt

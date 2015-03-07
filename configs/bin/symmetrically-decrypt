@@ -1,0 +1,26 @@
+# Symmetric decryption function
+# * Used in the dotfiles repo.
+
+if [ $# -ne 2 ]; then
+    echo "usage: symmetrically-decrypt <source> <destination>"
+    exit 1
+fi
+
+# Find the path to this file.
+FILE="${BASH_SOURCE[0]}"
+while [ -h "$FILE" ]; do
+    # $FILE is a symlink, so follow it to the source.
+    TARGET="$(readlink "$FILE")"
+    if [[ "$TARGET" == /* ]]; then
+        # Absolute path.
+        FILE="$TARGET"
+    else
+        # Relative path.
+        DIR="$( cd -P "$( dirname "$FILE" )" && pwd )"
+        FILE="$DIR/$TARGET"
+    fi
+done
+
+THIS_REPO="$( cd "$( dirname "$( dirname "$( dirname "$FILE" )" )" )" && pwd )"
+
+openssl enc -aes-256-cbc -d -a -in "$1" -out "$2" -pass file:"$THIS_REPO/password.txt"
