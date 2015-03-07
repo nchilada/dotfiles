@@ -11,6 +11,8 @@ fi
 
 THIS_REPO="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
+HOOKS="$THIS_REPO/hooks"
+
 CONFIGS="$THIS_REPO/configs"
 PLATFORM_CONFIGS="$CONFIGS/platform_$1"
 PLATFORM_PROFILE_CONFIGS="$PLATFORM_CONFIGS/profile_$2"
@@ -20,6 +22,18 @@ if [ ! -d "$PLATFORM_PROFILE_CONFIGS" ]; then
    echo "Error in $0 $@: can't find $PLATFORM_PROFILE_CONFIGS/"
    exit 1
 fi
+
+
+
+### This repo
+
+# Set up git hooks for this repository.
+for filename in "$HOOKS"/*; do
+   linkname=$THIS_REPO/.git/hooks/$(basename "$filename")
+   echo "$linkname ----------------> $filename"
+   ln -sfn "$filename" "$linkname"
+done
+
 
 
 ### Register configs from ./configs/<platform>/<profile>/

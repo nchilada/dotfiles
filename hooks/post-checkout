@@ -1,0 +1,8 @@
+# Decrypt any encrypted files currently checked into this repo.
+
+# Requires GNU sed.
+# On OS X, this requires one to run `make install-sed`.
+
+git ls-files \
+| sed -n "s/\(..*\)\\.symmetrically-encrypted$/\"\\0\" \"\\1\"/p" 2> /dev/null \
+| xargs symmetrically-decrypt
