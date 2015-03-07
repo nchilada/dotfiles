@@ -37,6 +37,10 @@ export PATH=$JAVA_HOME/bin:$PATH
 export MANPATH=$JAVA_HOME/man:$MANPATH
 export LD_LIBRARY_PATH=$JAVA_HOME/lib:$LD_LIBRARY_PATH
 
+# GNU sed, once installed via `make install-sed`.
+export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
+export MANPATH="/usr/local/opt/gnu-sed/libexec/gnuman:$MANPATH"
+
 # iTerm2 tab/window titles.
 # - `title` sets the title to the name of the current working directory.
 # - `title Foo bar` sets the title to 'Foo bar'.

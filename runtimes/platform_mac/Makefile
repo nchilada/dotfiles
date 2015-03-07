@@ -19,6 +19,8 @@ PYTHON := /usr/local/bin/python
 PIP := /usr/local/bin/pip
 VIRTUALENV := /usr/local/bin/virtualenv # necessary?
 
+SED := /usr/local/opt/gnu-sed/libexec/gnubin/sed
+
 TREE := /usr/local/bin/tree
 
 # For commands that ask for confirmation.  See http://stackoverflow.com/a/16745106
@@ -80,11 +82,15 @@ install-cask-apps: install-cask
 
 
 
-install-command-line-tools: install-git install-tree
+install-command-line-tools: install-git install-sed install-tree
 
 install-git: install-brew
 	type ${GIT} >/dev/null 2>&1 || \
 		${HOMEBREW} install git
+
+install-sed: install-brew
+	type ${SED} >/dev/null 2>&1 || \
+		${HOMEBREW} install gnu-sed
 
 install-tree: install-brew
 	type ${TREE} >/dev/null 2>&1 || \
@@ -200,11 +206,16 @@ uninstall-cask-apps: install-cask
 
 
 
-uninstall-command-line-tools: uninstall-git uninstall-tree
+uninstall-command-line-tools: uninstall-git uninstall-sed uninstall-tree
 
 uninstall-git: install-brew
 	type ${GIT} >/dev/null 2>&1 && \
 		${HOMEBREW} uninstall git || \
+		true
+
+uninstall-sed: install-brew
+	type ${SED} >/dev/null 2>&1 && \
+		${HOMEBREW} uninstall gnu-sed || \
 		true
 
 uninstall-tree: install-brew
