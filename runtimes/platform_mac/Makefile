@@ -77,6 +77,7 @@ install-cask-apps: install-cask
 		1password `# Should get a license and track it in the repo.` \
 		selfcontrol \
 		skype \
+		slate \
 		spectacle \
 		sourcetree `# Should get a license and track it in the repo.` \
 		witch `# Should track the license in this repo.` \
@@ -202,6 +203,7 @@ uninstall-cask-apps: install-cask
 		1password \
 		selfcontrol \
 		skype \
+		slate \
 		spectacle \
 		sourcetree \
 		witch \
