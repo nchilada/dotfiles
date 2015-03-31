@@ -144,7 +144,7 @@ install-python: install-brew
 		${HOMEBREW} install python
 
 install-python-packages: install-python
-	${PIP} install ipython requests virtualenv
+	${PIP} install ipython pdbpp requests virtualenv
 
 
 
@@ -277,11 +277,16 @@ uninstall-python:
 		${HOMEBREW} uninstall python || \
 		true
 
-uninstall-python-packages: uninstall-ipython uninstall-requests uninstall-virtualenv
+uninstall-python-packages: uninstall-ipython uninstall-pdbpp uninstall-requests uninstall-virtualenv
 
 uninstall-ipython: install-python
 	${PIP} show ipython | grep -i version >/dev/null && \
 		${YES} | ${PIP} uninstall ipython || \
+		true
+
+uninstall-pdbpp: install-python
+	${PIP} show pdbpp | grep -i version >/dev/null && \
+		${YES} | ${PIP} uninstall pdbpp || \
 		true
 
 uninstall-requests: install-python
