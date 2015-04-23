@@ -104,6 +104,9 @@
             <root type="simple" url="file://$USER_HOME$/optimizely/out/gae/lib" />
             <root type="simple" url="file://$USER_HOME$/optimizely/out/closure_library/closure/bin/build" />
             <root type="simple" url="file://$APPLICATION_HOME_DIR$/helpers/python-skeletons" />
+            <root type="simple" url="file://$USER_HOME$/optimizely/out/gae/lib/django-1.4" />
+            <root type="simple" url="file://$USER_HOME$/optimizely/out/gae/lib/jinja2-2.6" />
+            <root type="simple" url="file://$USER_HOME$/optimizely/out/gae/lib/yaml/lib" />
           </root>
         </classPath>
         <sourcePath>
