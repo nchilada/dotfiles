@@ -80,6 +80,7 @@ install-cask-apps: install-cask
 		slate \
 		spectacle \
 		sourcetree `# Should get a license and track it in the repo.` \
+		webstorm \
 		witch `# Should track the license in this repo.` \
 
 
@@ -206,6 +207,7 @@ uninstall-cask-apps: install-cask
 		slate \
 		spectacle \
 		sourcetree \
+		webstorm \
 		witch \
 
 
