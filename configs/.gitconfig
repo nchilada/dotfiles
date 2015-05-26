@@ -7,6 +7,11 @@
     adp = add --patch
 
     bl = blame
+    # Current line count per author within a specified $DIR.
+    # Example:
+    #   DIR=src/ MASK=\\.py$ git blc
+    # See http://www.commandlinefu.com/commands/view/10831 and http://stackoverflow.com/a/18496493/853
+    blc = ! git ls-files -- "$DIR" | grep "${MASK:-.}" | xargs -I{} git blame --line-porcelain "{}" | sed -n 's/^author //p' | sort -f | uniq -ic | sort -nr
 
     br = branch
     brd = branch --delete
@@ -28,6 +33,7 @@
 
     lg = log
     lgno = log --name-only
+    lgg = log --graph --pretty=oneline --abbrev-commit --all
 
     pk = cherry-pick
 
