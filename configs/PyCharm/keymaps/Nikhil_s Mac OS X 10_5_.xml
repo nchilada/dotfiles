@@ -53,6 +53,7 @@
   <action id="Annotate">
     <keyboard-shortcut first-keystroke="control 2" />
   </action>
+  <action id="ChangesView.Diff" />
   <action id="ChooseDebugConfiguration">
     <keyboard-shortcut first-keystroke="shift alt F9" />
   </action>
@@ -71,12 +72,14 @@
     <keyboard-shortcut first-keystroke="meta SEMICOLON" />
   </action>
   <action id="CommentByLineComment" />
+  <action id="CompareTwoFiles" />
   <action id="Debug">
     <keyboard-shortcut first-keystroke="shift F9" />
   </action>
   <action id="DebugClass">
     <keyboard-shortcut first-keystroke="shift control F9" />
   </action>
+  <action id="Diff.ShowDiff" />
   <action id="Editor Cut" />
   <action id="Editor Delete">
     <keyboard-shortcut first-keystroke="DELETE" />
@@ -162,6 +165,7 @@
   <action id="EditorToggleStickySelection">
     <keyboard-shortcut first-keystroke="control SPACE" />
   </action>
+  <action id="FileChooser.GotoDesktop" />
   <action id="Find">
     <keyboard-shortcut first-keystroke="control S" />
     <keyboard-shortcut first-keystroke="control R" />
@@ -234,6 +238,7 @@
   <action id="SaveAs">
     <keyboard-shortcut first-keystroke="control X" second-keystroke="control W" />
   </action>
+  <action id="SendEOF" />
   <action id="SmartTypeCompletion">
     <keyboard-shortcut first-keystroke="shift control alt SLASH" />
   </action>
@@ -268,4 +273,5 @@
   <action id="emacsIDEAs.AceJumpWord">
     <keyboard-shortcut first-keystroke="control X" second-keystroke="W" />
   </action>
+  <action id="openAssertEqualsDiff" />
 </keymap>
