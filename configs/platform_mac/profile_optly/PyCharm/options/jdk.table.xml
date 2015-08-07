@@ -107,6 +107,17 @@
             <root type="simple" url="file://$USER_HOME$/optimizely/out/gae/lib/django-1.4" />
             <root type="simple" url="file://$USER_HOME$/optimizely/out/gae/lib/jinja2-2.6" />
             <root type="simple" url="file://$USER_HOME$/optimizely/out/gae/lib/yaml/lib" />
+            <root type="simple" url="file:///usr/local/google-cloud-sdk/platform/google_appengine" />
+            <root type="simple" url="file:///usr/local/google-cloud-sdk/platform/google_appengine/lib/antlr3" />
+            <root type="simple" url="file:///usr/local/google-cloud-sdk/platform/google_appengine/lib/docker" />
+            <root type="simple" url="file:///usr/local/google-cloud-sdk/platform/google_appengine/lib/django-1.4" />
+            <root type="simple" url="file:///usr/local/google-cloud-sdk/platform/google_appengine/lib/ipaddr" />
+            <root type="simple" url="file:///usr/local/google-cloud-sdk/platform/google_appengine/lib/fancy_urllib" />
+            <root type="simple" url="file:///usr/local/google-cloud-sdk/platform/google_appengine/lib/jinja2-2.6" />
+            <root type="simple" url="file:///usr/local/google-cloud-sdk/platform/google_appengine/lib/webapp2-2.5.2" />
+            <root type="simple" url="file:///usr/local/google-cloud-sdk/platform/google_appengine/lib/webob-1.1.1" />
+            <root type="simple" url="file:///usr/local/google-cloud-sdk/platform/google_appengine/lib/yaml/lib" />
+            <root type="simple" url="file:///usr/local/google-cloud-sdk/platform/google_appengine/lib" />
           </root>
         </classPath>
         <sourcePath>

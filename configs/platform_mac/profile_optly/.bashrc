@@ -24,6 +24,15 @@ source "$PARENT/.bashrc"
 
 ### Now do the rest.
 
+# The next line enables shell command completion for gcloud.
+source '/usr/local/google-cloud-sdk/completion.bash.inc'
+
+# The next line updates PATH for the Google Cloud SDK.
+source '/Users/nchelliah/.google-cloud-sdk/path.bash.inc'
+
+# The next line enables shell command completion for gcloud.
+source '/Users/nchelliah/.google-cloud-sdk/completion.bash.inc'
+
 # MacPorts.
 export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
 
