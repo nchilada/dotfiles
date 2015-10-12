@@ -9,9 +9,11 @@
     bl = blame
     # Current line count per author within a specified $DIR.
     # Example:
-    #   DIR=src/ MASK=\\.py$ git blc
+    #   WITHIN=src/README.md git blc
+    #   WITHIN=src/ INCLUDE=\\.py$ git blc
+    #   WITHIN=src/ EXCLUDE=^src/README.md$ git blc
     # See http://www.commandlinefu.com/commands/view/10831 and http://stackoverflow.com/a/18496493/853
-    blc = ! git ls-files -- "$DIR" | grep "${MASK:-.}" | xargs -I{} git blame --line-porcelain "{}" | sed -n 's/^author //p' | sort -f | uniq -ic | sort -nr
+    blc = ! git ls-files -- "$WITHIN" | grep "${INCLUDE:-.}" | grep -v "${EXCLUDE:-a^}" | xargs -I{} git blame --line-porcelain "{}" | sed -n 's/^author //p' | sort -f | uniq -ic | sort -nr
 
     br = branch
     brd = branch --delete
