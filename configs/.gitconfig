@@ -16,6 +16,8 @@
     blc = ! git ls-files -- "$WITHIN" | grep "${INCLUDE:-.}" | grep -v "${EXCLUDE:-a^}" | xargs -I{} git blame --line-porcelain "{}" | sed -n 's/^author //p' | sort -f | uniq -ic | sort -nr
 
     br = branch
+    # Only list the current branch.
+    brc = symbolic-ref --short head
     brd = branch --delete
     brD = branch -D
 
@@ -36,6 +38,9 @@
     lg = log
     lgno = log --name-only
     lgg = log --graph --pretty=oneline --abbrev-commit --all
+
+    mg = merge
+    mgnoff = merge --no-ff
 
     pk = cherry-pick
 
