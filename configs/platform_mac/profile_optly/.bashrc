@@ -42,6 +42,8 @@ source $HOME/.optimizely/.rake_autocomplete.sh
 export PATH=$HOME/tools/arcanist/bin:$PATH
 
 # Optimizely environment variables.
+# TODO: Unfortunately, `source "$PARENT/.bashrc"` sets `$DIR` to the parent, so we have to index into profile_optly/...
+export GITHUB_TOKEN=$(cat "$DIR/profile_optly/github_token.txt")
 export SAUCE_USERNAME=NikhilChelliah
 
 # Suppress some warnings from OS 10.8's implementation of sudo.
