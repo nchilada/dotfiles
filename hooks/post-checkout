@@ -5,4 +5,4 @@
 
 git ls-files \
 | sed -n "s/\(..*\)\\.symmetrically-encrypted$/\"\\0\" \"\\1\"/p" 2> /dev/null \
-| xargs symmetrically-decrypt
+| xargs -n 2 symmetrically-decrypt
