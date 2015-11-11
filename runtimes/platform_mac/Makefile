@@ -75,6 +75,7 @@ install-cask-apps: install-cask
 		lighttable \
 		nosleep \
 		1password `# Should get a license and track it in the repo.` \
+		praat \
 		selfcontrol \
 		skype \
 		slate \
@@ -202,6 +203,7 @@ uninstall-cask-apps: install-cask
 		lighttable \
 		nosleep \
 		1password \
+		praat \
 		selfcontrol \
 		skype \
 		slate \
