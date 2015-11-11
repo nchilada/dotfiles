@@ -150,18 +150,11 @@ install-python-packages: install-python
 
 
 
-# Upgrade runtimes.
+# Update runtimes.
 
-upgrade: update-brew
-	${HOMEBREW} upgrade `${HOMEBREW} outdated`
-
-upgrade-node: update-brew
-	${HOMEBREW} upgrade `${HOMEBREW} outdated | grep node`
-
-# Helper.
-update-brew: install-brew
-	${HOMEBREW} update
-
+update: install-brew
+	${HOMEBREW} update && \
+		${HOMEBREW} upgrade
 
 
 # Uninstall runtimes.
