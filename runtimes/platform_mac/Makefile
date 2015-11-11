@@ -58,11 +58,9 @@ install-cask: install-brew
 install-cask-apps: install-cask
 	${CASK} install \
 		acorn `# Should track the license in this repo.` \
-		atom \
 		charles `# Should track the license in this repo.` \
 		clipmenu \
 		dropbox \
-		dwarf-fortress \
 		emacs \
 		evernote \
 		firefox \
@@ -179,11 +177,9 @@ uninstall-cask: install-brew
 uninstall-cask-apps: install-cask
 	${CASK} uninstall \
 		acorn \
-		atom \
 		charles \
 		clipmenu \
 		dropbox \
-		dwarf-fortress \
 		emacs \
 		evernote \
 		firefox \
