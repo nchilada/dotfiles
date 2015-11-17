@@ -17,7 +17,7 @@
 
     br = branch
     # Only list the current branch.
-    brc = symbolic-ref --short head
+    brc = rev-parse --abbrev-ref HEAD
     brd = branch --delete
     brD = branch -D
 
