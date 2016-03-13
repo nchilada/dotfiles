@@ -118,6 +118,55 @@
             <root type="simple" url="file:///usr/local/google-cloud-sdk/platform/google_appengine/lib/webob-1.1.1" />
             <root type="simple" url="file:///usr/local/google-cloud-sdk/platform/google_appengine/lib/yaml/lib" />
             <root type="simple" url="file:///usr/local/google-cloud-sdk/platform/google_appengine/lib" />
+            <root type="simple" url="file://$USER_HOME$/.google-cloud-sdk/platform/google_appengine" />
+            <root type="simple" url="file://$USER_HOME$/.google-cloud-sdk/platform/google_appengine/lib/antlr3" />
+            <root type="simple" url="file://$USER_HOME$/.google-cloud-sdk/platform/google_appengine/lib/docker" />
+            <root type="simple" url="file://$USER_HOME$/.google-cloud-sdk/platform/google_appengine/lib/django-1.4" />
+            <root type="simple" url="file://$USER_HOME$/.google-cloud-sdk/platform/google_appengine/lib/ipaddr" />
+            <root type="simple" url="file://$USER_HOME$/.google-cloud-sdk/platform/google_appengine/lib/fancy_urllib" />
+            <root type="simple" url="file://$USER_HOME$/.google-cloud-sdk/platform/google_appengine/lib/jinja2-2.6" />
+            <root type="simple" url="file://$USER_HOME$/.google-cloud-sdk/platform/google_appengine/lib/webapp2-2.5.2" />
+            <root type="simple" url="file://$USER_HOME$/.google-cloud-sdk/platform/google_appengine/lib/webob-1.1.1" />
+            <root type="simple" url="file://$USER_HOME$/.google-cloud-sdk/platform/google_appengine/lib/yaml/lib" />
+            <root type="simple" url="file://$USER_HOME$/.google-cloud-sdk/platform/google_appengine/lib" />
+          </root>
+        </classPath>
+        <sourcePath>
+          <root type="composite" />
+        </sourcePath>
+      </roots>
+      <additional />
+    </jdk>
+    <jdk version="2">
+      <name value="Python 2.7.8 virtualenv at ~/optimizely/.virtualenv/www/dev" />
+      <type value="Python SDK" />
+      <version value="Python 2.7.8" />
+      <homePath value="$USER_HOME$/optimizely/.virtualenv/www/dev/bin/python2" />
+      <roots>
+        <classPath>
+          <root type="composite">
+            <root type="simple" url="file://$USER_HOME$/optimizely/.virtualenv/www/dev/lib/python2.7" />
+            <root type="simple" url="file://$USER_HOME$/optimizely/.virtualenv/www/dev/lib/python2.7/lib-dynload" />
+            <root type="simple" url="file://$USER_HOME$/optimizely/out/python2-2.7.8/out/lib/python2.7" />
+            <root type="simple" url="file://$USER_HOME$/optimizely/out/python2-2.7.8/out/lib/python2.7/plat-darwin" />
+            <root type="simple" url="file://$USER_HOME$/optimizely/out/python2-2.7.8/out/lib/python2.7/lib-tk" />
+            <root type="simple" url="file://$USER_HOME$/optimizely/out/python2-2.7.8/out/lib/python2.7/plat-mac" />
+            <root type="simple" url="file://$USER_HOME$/optimizely/out/python2-2.7.8/out/lib/python2.7/plat-mac/lib-scriptpackages" />
+            <root type="simple" url="file://$USER_HOME$/optimizely/.virtualenv/www/dev/lib/python2.7/site-packages" />
+            <root type="simple" url="file://$USER_HOME$/optimizely/out/closure_library/closure/bin/build" />
+            <root type="simple" url="file://$USER_HOME$/.google-cloud-sdk/platform/google_appengine" />
+            <root type="simple" url="file://$USER_HOME$/.google-cloud-sdk/platform/google_appengine/lib/antlr3" />
+            <root type="simple" url="file://$USER_HOME$/.google-cloud-sdk/platform/google_appengine/lib/docker" />
+            <root type="simple" url="file://$USER_HOME$/.google-cloud-sdk/platform/google_appengine/lib/django-1.4" />
+            <root type="simple" url="file://$USER_HOME$/.google-cloud-sdk/platform/google_appengine/lib/ipaddr" />
+            <root type="simple" url="file://$USER_HOME$/.google-cloud-sdk/platform/google_appengine/lib/fancy_urllib" />
+            <root type="simple" url="file://$USER_HOME$/.google-cloud-sdk/platform/google_appengine/lib/jinja2-2.6" />
+            <root type="simple" url="file://$USER_HOME$/.google-cloud-sdk/platform/google_appengine/lib/webapp2-2.5.2" />
+            <root type="simple" url="file://$USER_HOME$/.google-cloud-sdk/platform/google_appengine/lib/webob-1.1.1" />
+            <root type="simple" url="file://$USER_HOME$/.google-cloud-sdk/platform/google_appengine/lib/yaml/lib" />
+            <root type="simple" url="file://$USER_HOME$/.google-cloud-sdk/platform/google_appengine/lib" />
+            <root type="simple" url="file://$APPLICATION_HOME_DIR$/helpers/python-skeletons" />
+            <root type="simple" url="file://$USER_HOME$/Library/Caches/PyCharm40/python_stubs/-1538167073" />
           </root>
         </classPath>
         <sourcePath>
