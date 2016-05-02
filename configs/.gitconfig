@@ -36,6 +36,7 @@
     dfno = diff --name-only
 
     lg = log
+    lgfp = log --first-parent
     lgno = log --name-only
     lgg = log --graph --pretty=oneline --abbrev-commit --all
 
