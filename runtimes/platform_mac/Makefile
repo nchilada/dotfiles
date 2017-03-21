@@ -81,6 +81,7 @@ install-cask-apps: install-cask
 		sourcetree `# Should get a license and track it in the repo.` \
 		sync \
 		webstorm \
+		whatsapp \
 		witch `# Should track the license in this repo.` \
 
 
