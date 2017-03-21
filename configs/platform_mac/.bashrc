@@ -25,8 +25,9 @@ source "$PARENT/.bashrc"
 
 ### Now do the rest.
 
-# Use Emacs.app on the command line.
-alias emacs='/opt/homebrew-cask/Caskroom/emacs/*/Emacs.app/Contents/MacOS/Emacs -nw $@'
+# Use Emacs or launch Emacs.app from the command line.
+alias emacs='/Applications/Emacs.app/Contents/MacOS/Emacs -nw $@'
+alias emax='/Applications/Emacs.app/Contents/MacOS/Emacs $@'
 
 # Hopefully, point to the version of Java installed by
 # runtimes/platform_mac/Makefile:java
