@@ -60,7 +60,6 @@ install-cask-apps: install-cask
 		acorn `# Should track the license in this repo.` \
 		charles `# Should track the license in this repo.` \
 		clipmenu \
-		dropbox \
 		emacs \
 		evernote \
 		firefox \
@@ -80,6 +79,7 @@ install-cask-apps: install-cask
 		slate \
 		spectacle \
 		sourcetree `# Should get a license and track it in the repo.` \
+		sync \
 		webstorm \
 		witch `# Should track the license in this repo.` \
 
