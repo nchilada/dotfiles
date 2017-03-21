@@ -76,6 +76,7 @@ install-cask-apps: install-cask
 		praat \
 		selfcontrol \
 		skype \
+		slack \
 		slate \
 		spectacle \
 		sourcetree `# Should get a license and track it in the repo.` \
