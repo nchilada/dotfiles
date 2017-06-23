@@ -1,0 +1,4 @@
+# From http://blog.yohanliyanage.com/2015/05/docker-clean-up-after-yourself/
+# via https://gist.github.com/tylerbrandt/1ab54fe5139e69b4e2c7e7cdd75a1714
+docker rm -v $(docker ps -a -q -f status=exited)
+docker rmi $(docker images -f "dangling=true" -q | tr -s " " | cut -d" " -f 3)
