@@ -10,8 +10,11 @@
 # Makefile symlink (system-specific, like the configs that we put in ~, so it's untracked).
 /Makefile
 
-# OS X Finder preferences.
+# OS X Finder config for the working copy.
 .DS_Store
+
+# JetBrains config for the working copy.
+/.idea
 
 # Password.
 /password.txt
