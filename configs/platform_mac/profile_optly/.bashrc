@@ -47,6 +47,7 @@ export PATH=$HOME/tools/arcanist/bin:$PATH
 # Optimizely environment variables.
 # TODO: Unfortunately, `source "$PARENT/.bashrc"` sets `$DIR` to the parent, so we have to index into profile_optly/...
 export GITHUB_TOKEN=$(cat "$DIR/profile_optly/github_token.txt")
+source $DIR/profile_optly/browserstack.bash
 
 # Sign git commits using GPG.
 # These settings would ideally be in .gitconfig, but this repo doesn't support a profile-specific .gitconfig.
