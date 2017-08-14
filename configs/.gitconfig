@@ -1,6 +1,10 @@
 [user]
     name = nikhil
-    email = nikhil@nikhil.cc
+    email = nikhil@optimizely.com
+    signingkey = 64A09F45
+
+[commit]
+    gpgsign = true
 
 [alias]
     ad = add
