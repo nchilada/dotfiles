@@ -69,7 +69,6 @@ install-cask-apps: install-cask
 		gpgtools \
 		iterm2 \
 		jitouch \
-		lighttable \
 		nosleep \
 		1password `# Should get a license and track it in the repo.` \
 		praat \
