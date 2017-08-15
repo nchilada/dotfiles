@@ -4,5 +4,5 @@
 # On OS X, this requires one to run `make install-sed`.
 
 git ls-files \
-| sed -n "s/\(..*\)\\.symmetrically-encrypted$/\"\\0\" \"\\1\"/p" 2> /dev/null \
+| sed -n "s/\(..*\)\\.symmetrically-encrypted$/\"\\1\.symmetrically-encrypted\" \"\\1\"/p" 2> /dev/null \
 | xargs -n 2 symmetrically-decrypt
