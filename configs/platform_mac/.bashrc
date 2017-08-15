@@ -55,3 +55,12 @@ title() {
     fi
     echo -ne "\033]0;${title}\007"
 };
+
+# Node version manager.
+export NVM_DIR="$HOME/.nvm"
+if [ -n "$(type -t nvm)" ] && [ "$(type -t nvm)" = function ];
+then
+    :
+else
+    source "$(brew --prefix nvm)/nvm.sh"
+fi

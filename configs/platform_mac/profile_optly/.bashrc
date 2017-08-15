@@ -50,6 +50,3 @@ source $DIR/profile_optly/browserstack.bash
 # Suppress some warnings from OS 10.8's implementation of sudo.
 # See http://apple.stackexchange.com/a/83566.
 sudo () { ( unset LD_LIBRARY_PATH DYLD_LIBRARY_PATH; exec command sudo $* ) }
-
-export NVM_DIR=~/.nvm
-. $(brew --prefix nvm)/nvm.sh

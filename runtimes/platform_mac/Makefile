@@ -13,8 +13,6 @@ GIT := /usr/local/bin/git
 
 JAVA := /usr/local/bin/java
 
-NODE := /usr/local/bin/node
-
 PYTHON := /usr/local/bin/python
 PIP := /usr/local/bin/pip
 VIRTUALENV := /usr/local/bin/virtualenv # necessary?
@@ -39,7 +37,7 @@ YES := /usr/bin/yes
 
 # Install runtimes.
 
-install: install-brew-and-cask install-cask-apps install-command-line-tools install-elm-and-packages install-java-and-clojure-and-packages install-node-and-packages install-python-and-packages
+install: install-brew-and-cask install-cask-apps install-command-line-tools install-elm-and-packages install-java-and-clojure-and-packages install-nvm install-python-and-packages
 
 
 
@@ -128,14 +126,9 @@ install-java: install-cask
 
 
 
-install-node-and-packages: install-node-packages
-
-install-node: install-brew
-	type ${NODE} >/dev/null 2>&1 || \
-		${HOMEBREW} install node
-
-install-node-packages: install-node
-	npm install --prefix ${HOME} collections es6-promise lodash request
+# TODO: Maybe use `nvm` to install a basic Node with lodash, request, and collections?
+install-nvm: install-brew
+	${HOMEBREW} install nvm
 
 
 
@@ -160,7 +153,7 @@ update: install-brew
 # Uninstall runtimes.
 
 # Uninstall individual brew packages BEFORE uninstalling brew.
-uninstall: uninstall-cask-apps uninstall-command-line-tools uninstall-elm-and-packages uninstall-java-and-clojure-and-packages uninstall-node-and-packages uninstall-python-and-packages uninstall-brew-and-cask
+uninstall: uninstall-cask-apps uninstall-command-line-tools uninstall-elm-and-packages uninstall-java-and-clojure-and-packages uninstall-nvm uninstall-python-and-packages uninstall-brew-and-cask
 
 
 
@@ -253,15 +246,8 @@ uninstall-java: install-cask
 
 
 
-uninstall-node-and-packages: uninstall-node-packages uninstall-node
-
-uninstall-node:
-	type ${NODE} >/dev/null 2>&1 && \
-		${HOMEBREW} uninstall node || \
-		true
-
-uninstall-node-packages: install-node
-	npm uninstall --prefix ${HOME} collections es6-promise lodash request
+uninstall-nvm: install-brew
+	${HOMEBREW} uninstall nvm
 
 
 
