@@ -64,3 +64,13 @@ then
 else
     source "$(brew --prefix nvm)/nvm.sh"
 fi
+
+# Python version manager.
+if which pyenv > /dev/null
+then
+    :
+else
+    eval "$(pyenv init -)"
+    # TODO: Maybe test for a different condition than `which pyenv` before running this command?
+    eval "$(pyenv virtualenv-init -)"
+fi

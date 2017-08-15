@@ -13,10 +13,6 @@ GIT := /usr/local/bin/git
 
 JAVA := /usr/local/bin/java
 
-PYTHON := /usr/local/bin/python
-PIP := /usr/local/bin/pip
-VIRTUALENV := /usr/local/bin/virtualenv # necessary?
-
 SED := /usr/local/opt/gnu-sed/libexec/gnubin/sed
 
 TREE := /usr/local/bin/tree
@@ -37,7 +33,7 @@ YES := /usr/bin/yes
 
 # Install runtimes.
 
-install: install-brew-and-cask install-cask-apps install-command-line-tools install-elm-and-packages install-java-and-clojure-and-packages install-nvm install-python-and-packages
+install: install-brew-and-cask install-cask-apps install-command-line-tools install-elm-and-packages install-java-and-clojure-and-packages install-nvm install-pyenv
 
 
 
@@ -132,14 +128,9 @@ install-nvm: install-brew
 
 
 
-install-python-and-packages: install-python-packages
-
-install-python: install-brew
-	type ${PYTHON} >/dev/null 2>&1 || \
-		${HOMEBREW} install python
-
-install-python-packages: install-python
-	${PIP} install ipython pdbpp requests virtualenv
+# TODO: Maybe use `pyenv` to install a basic Python 2 and a Python 3 with ipython, pdbpp, and requests?
+install-pyenv: install-brew
+	${HOMEBREW} install pyenv && ${HOMEBREW} install pyenv-virtualenv
 
 
 
@@ -153,7 +144,7 @@ update: install-brew
 # Uninstall runtimes.
 
 # Uninstall individual brew packages BEFORE uninstalling brew.
-uninstall: uninstall-cask-apps uninstall-command-line-tools uninstall-elm-and-packages uninstall-java-and-clojure-and-packages uninstall-nvm uninstall-python-and-packages uninstall-brew-and-cask
+uninstall: uninstall-cask-apps uninstall-command-line-tools uninstall-elm-and-packages uninstall-java-and-clojure-and-packages uninstall-nvm uninstall-pyenv uninstall-brew-and-cask
 
 
 
@@ -251,31 +242,5 @@ uninstall-nvm: install-brew
 
 
 
-uninstall-python-and-packages: uninstall-python-packages uninstall-python
-
-uninstall-python:
-	type ${PYTHON} >/dev/null 2>&1 && \
-		${HOMEBREW} uninstall python || \
-		true
-
-uninstall-python-packages: uninstall-ipython uninstall-pdbpp uninstall-requests uninstall-virtualenv
-
-uninstall-ipython: install-python
-	${PIP} show ipython | grep -i version >/dev/null && \
-		${YES} | ${PIP} uninstall ipython || \
-		true
-
-uninstall-pdbpp: install-python
-	${PIP} show pdbpp | grep -i version >/dev/null && \
-		${YES} | ${PIP} uninstall pdbpp || \
-		true
-
-uninstall-requests: install-python
-	${PIP} show requests | grep -i version >/dev/null && \
-		${YES} | ${PIP} uninstall requests || \
-		true
-
-uninstall-virtualenv: install-python
-	${PIP} show virtualenv | grep -i version >/dev/null && \
-		${YES} | ${PIP} uninstall virtualenv || \
-		true
+uninstall-pyenv: install-brew
+	${HOMEBREW} uninstall pyenv-virtualenv && ${HOMEBREW} uninstall pyenv
