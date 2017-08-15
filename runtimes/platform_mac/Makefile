@@ -59,7 +59,7 @@ install-cask-apps: install-cask
 	${CASK} install \
 		acorn `# Should track the license in this repo.` \
 		charles `# Should track the license in this repo.` \
-		clipmenu \
+		clipy \
 		emacs \
 		evernote \
 		firefox \
