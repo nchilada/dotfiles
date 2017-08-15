@@ -72,6 +72,7 @@ install-cask-apps: install-cask
 		nosleep \
 		1password `# Should get a license and track it in the repo.` \
 		praat \
+		pycharm \
 		selfcontrol \
 		skype \
 		slack \
