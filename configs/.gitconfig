@@ -1,10 +1,9 @@
 [user]
     name = nikhil
-    email = nikhil@optimizely.com
-    signingkey = 64A09F45
+    email = nikhil@nikhil.cc
 
-[commit]
-    gpgsign = true
+[includeIf "gitdir:~/optimizely/"]
+    path = .gitconfig-optimizely
 
 [alias]
     ad = add

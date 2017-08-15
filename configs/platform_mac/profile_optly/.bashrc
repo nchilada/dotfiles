@@ -46,13 +46,6 @@ export PATH=$HOME/tools/arcanist/bin:$PATH
 export GITHUB_TOKEN=$(cat "$DIR/profile_optly/github_token.txt")
 source $DIR/profile_optly/browserstack.bash
 
-# Sign git commits using GPG.
-# These settings would ideally be in .gitconfig, but this repo doesn't support a profile-specific .gitconfig.
-git config --global user.name "nikhil"
-git config --global user.email "nikhil@optimizely.com"
-git config --global user.signingkey "64A09F45"
-git config --global commit.gpgsign "true"
-
 # Suppress some warnings from OS 10.8's implementation of sudo.
 # See http://apple.stackexchange.com/a/83566.
 sudo () { ( unset LD_LIBRARY_PATH DYLD_LIBRARY_PATH; exec command sudo $* ) }

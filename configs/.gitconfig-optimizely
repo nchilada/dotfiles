@@ -1,0 +1,7 @@
+[user]
+    name = nikhil
+    email = nikhil@optimizely.com
+    signingkey = 64A09F45
+
+[commit]
+    gpgsign = true
