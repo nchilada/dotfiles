@@ -45,7 +45,7 @@ install-brew:
 
 install-cask: install-brew
 	type ${CASK_ARTIFACT} >/dev/null 2>&1 || \
-		${HOMEBREW} install caskroom/cask/brew-cask
+		${HOMEBREW} tap caskroom/cask
 
 
 
