@@ -28,17 +28,22 @@ source "$PARENT/.bashrc"
 HOMEBREW_CASK_OPTS="--caskroom=/opt/homebrew-cask/Caskroom"
 
 # The next line updates PATH for the Google Cloud SDK.
-source '/Users/nchelliah/.google-cloud-sdk/path.bash.inc'
+if [ -f '$HOME/.google-cloud-sdk/path.bash.inc' ]
+then
+    source '$HOME/.google-cloud-sdk/path.bash.inc'
+fi
 
 # The next line enables shell command completion for gcloud.
-source '/Users/nchelliah/.google-cloud-sdk/completion.bash.inc'
+if [ -f '$HOME/.google-cloud-sdk/completion.bash.inc' ]
+then
+    source '$HOME/.google-cloud-sdk/completion.bash.inc'
+fi
 
 # MacPorts.
 export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
 
 # Optimizely dependencies.
-source $HOME/optimizely/.source_this.sh
-source $HOME/.optimizely/.rake_autocomplete.sh
+source $HOME/optimizely/optimizely/.source_this.sh
 export PATH=$HOME/tools/arcanist/bin:$PATH
 
 # Optimizely environment variables.
