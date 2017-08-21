@@ -36,9 +36,6 @@ then
     source '$HOME/.google-cloud-sdk/completion.bash.inc'
 fi
 
-# MacPorts.
-export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
-
 # Optimizely dependencies.
 source $HOME/optimizely/optimizely/.source_this.sh
 export PATH=$HOME/tools/arcanist/bin:$PATH
