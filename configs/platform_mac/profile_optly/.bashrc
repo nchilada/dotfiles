@@ -24,6 +24,9 @@ source "$PARENT/.bashrc"
 
 ### Now do the rest.
 
+# ssh-add the private key that I've generated for this computer.
+ssh-add -K ~/.ssh/github-optly-mbp &> /dev/null
+
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '$HOME/.google-cloud-sdk/path.bash.inc' ]
 then

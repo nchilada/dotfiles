@@ -25,6 +25,13 @@ source "$PARENT/.bashrc"
 
 ### Now do the rest.
 
+# Start an ssh-agent so that we can use ssh-add in this shell session
+# TODO: Reuse a single ssh-agent across shell sessions. See http://blog.joncairns.com/2013/12/understanding-ssh-agent-and-ssh-add/ and https://github.com/wwalker/ssh-find-agent
+if [[ -z "$SSH_AUTH_SOCK" || -z "$SSH_AGENT_PID" ]]
+then
+    eval "$(ssh-agent -s)" > /dev/null
+fi
+
 # Use Emacs or launch Emacs.app from the command line.
 alias emacs='/Applications/Emacs.app/Contents/MacOS/Emacs -nw $@'
 alias emax='/Applications/Emacs.app/Contents/MacOS/Emacs $@'
