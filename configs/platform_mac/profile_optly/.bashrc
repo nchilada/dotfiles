@@ -24,9 +24,6 @@ source "$PARENT/.bashrc"
 
 ### Now do the rest.
 
-# Point to the legacy Homebrew Cask installations.
-HOMEBREW_CASK_OPTS="--caskroom=/opt/homebrew-cask/Caskroom"
-
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '$HOME/.google-cloud-sdk/path.bash.inc' ]
 then
