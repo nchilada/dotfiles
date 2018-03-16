@@ -40,8 +40,7 @@ then
 fi
 
 # Optimizely dependencies.
-source $HOME/optimizely/optimizely/.source_this.sh
-source $HOME/optimizely/primordia/.source_this.sh
+export PATH=$HOME/optimizely/primordia/bin:$PATH
 export PATH=$HOME/tools/arcanist/bin:$PATH
 
 # Optimizely environment variables.
