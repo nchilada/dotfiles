@@ -39,6 +39,7 @@ export PATH=$HOME/tools/arcanist/bin:$PATH
 export GITHUB_TOKEN=$(cat "$DIR/profile_optly/github_token.txt")
 source $DIR/profile_optly/client-js-github-token.bash
 source $DIR/profile_optly/browserstack.bash
+source $DIR/profile_optly/artifactory.bash
 
 # Suppress some warnings from OS 10.8's implementation of sudo.
 # See http://apple.stackexchange.com/a/83566.
