@@ -48,6 +48,7 @@ install-cask-apps: install-brew-and-cask
 		acorn `# Should track the license in this repo.` \
 		charles `# Should track the license in this repo.` \
 		clipy \
+		discord \
 		dropbox \
 		emacs \
 		evernote \
@@ -70,7 +71,7 @@ install-cask-apps: install-brew-and-cask
 		webstorm \
 		whatsapp \
 		witch `# Should track the license in this repo.` \
-		zoom \
+		zoomus \
 
 
 
@@ -153,6 +154,7 @@ uninstall-cask-apps: install-brew-and-cask
 		acorn \
 		charles \
 		clipy \
+		discord \
 		dropbox \
 		emacs \
 		evernote \
@@ -175,7 +177,7 @@ uninstall-cask-apps: install-brew-and-cask
 		webstorm \
 		whatsapp \
 		witch \
-		zoom \
+		zoomus \
 
 
 
