@@ -48,21 +48,20 @@ install-cask-apps: install-brew-and-cask
 		acorn `# Should track the license in this repo.` \
 		charles `# Should track the license in this repo.` \
 		clipy \
+		dropbox \
 		emacs \
 		evernote \
 		firefox \
 		flux \
 		free-ruler \
 		google-chrome \
-		gpgtools \
 		iterm2 \
 		jitouch \
 		nosleep \
 		1password `# Should get a license and track it in the repo.` \
 		praat \
-		pycharm \
 		selfcontrol \
-		skype \
+		signal \
 		slack \
 		slate \
 		spectacle \
@@ -71,6 +70,7 @@ install-cask-apps: install-brew-and-cask
 		webstorm \
 		whatsapp \
 		witch `# Should track the license in this repo.` \
+		zoom \
 
 
 
@@ -152,7 +152,7 @@ uninstall-cask-apps: install-brew-and-cask
 	${CASK} uninstall \
 		acorn \
 		charles \
-		clipmenu \
+		clipy \
 		dropbox \
 		emacs \
 		evernote \
@@ -160,20 +160,22 @@ uninstall-cask-apps: install-brew-and-cask
 		flux \
 		free-ruler \
 		google-chrome \
-		gpgtools \
 		iterm2 \
 		jitouch \
-		lighttable \
 		nosleep \
 		1password \
 		praat \
 		selfcontrol \
-		skype \
+		signal \
+		slack \
 		slate \
 		spectacle \
 		sourcetree \
+		sync \
 		webstorm \
+		whatsapp \
 		witch \
+		zoom \
 
 
 
