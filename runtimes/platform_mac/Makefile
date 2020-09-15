@@ -37,19 +37,13 @@ install: install-brew-and-cask install-cask-apps install-command-line-tools inst
 
 
 
-install-brew-and-cask: install-brew install-cask
-
-install-brew:
+install-brew-and-cask:
 	type ${HOMEBREW} >/dev/null 2>&1 || \
-		ruby -e "$$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-
-install-cask: install-brew
-	type ${CASK_ARTIFACT} >/dev/null 2>&1 || \
-		${HOMEBREW} tap caskroom/cask
+		/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
 
 
-install-cask-apps: install-cask
+install-cask-apps: install-brew-and-cask
 	${CASK} install \
 		acorn `# Should track the license in this repo.` \
 		charles `# Should track the license in this repo.` \
@@ -82,15 +76,15 @@ install-cask-apps: install-cask
 
 install-command-line-tools: install-git install-sed install-tree
 
-install-git: install-brew
+install-git: install-brew-and-cask
 	type ${GIT} >/dev/null 2>&1 || \
 		${HOMEBREW} install git
 
-install-sed: install-brew
+install-sed: install-brew-and-cask
 	type ${SED} >/dev/null 2>&1 || \
 		${HOMEBREW} install gnu-sed
 
-install-tree: install-brew
+install-tree: install-brew-and-cask
 	type ${TREE} >/dev/null 2>&1 || \
 		${HOMEBREW} install tree
 
@@ -98,7 +92,7 @@ install-tree: install-brew
 
 install-elm-and-packages: install-elm-packages
 
-install-elm: install-cask
+install-elm: install-brew-and-cask
 	type ${ELM} >/dev/null 2>&1 || \
 		${CASK} install elm-platform
 
@@ -109,34 +103,34 @@ install-elm-packages: install-elm
 
 install-java-and-clojure-and-packages: install-clojure-packages
 
-install-clojure: install-brew install-java
+install-clojure: install-brew-and-cask install-java
 	type ${LEININGEN} >/dev/null 2>&1 || \
 		${HOMEBREW} install leiningen
 
 install-clojure-packages: install-clojure
 	true
 
-install-java: install-cask
+install-java: install-brew-and-cask
 	type ${JAVA} >/dev/null 2>&1 || \
 		${CASK} install java
 
 
 
 # TODO: Maybe use `nvm` to install a basic Node with lodash, request, and collections?
-install-nvm: install-brew
+install-nvm: install-brew-and-cask
 	${HOMEBREW} install nvm
 
 
 
 # TODO: Maybe use `pyenv` to install a basic Python 2 and a Python 3 with ipython, pdbpp, and requests?
-install-pyenv: install-brew
+install-pyenv: install-brew-and-cask
 	${HOMEBREW} install pyenv && ${HOMEBREW} install pyenv-virtualenv
 
 
 
 # Update runtimes.
 
-update: install-brew
+update: install-brew-and-cask
 	${HOMEBREW} update && \
 		${HOMEBREW} upgrade
 
@@ -148,19 +142,13 @@ uninstall: uninstall-cask-apps uninstall-command-line-tools uninstall-elm-and-pa
 
 
 
-uninstall-brew-and-cask: uninstall-cask uninstall-brew
-
-uninstall-brew:
+uninstall-brew-and-cask:
 	type ${HOMEBREW} >/dev/null 2>&1 && \
-		rm -rf /usr/local/Cellar /usr/local/.git && ${HOMEBREW} cleanup && rm ${HOMEBREW}
-
-uninstall-cask: install-brew
-	type ${CASK_ARTIFACT} >/dev/null 2>&1 && \
-		${HOMEBREW} uninstall caskroom/cask/brew-cask
+		/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/uninstall.sh)"
 
 
 
-uninstall-cask-apps: install-cask
+uninstall-cask-apps: install-brew-and-cask
 	${CASK} uninstall \
 		acorn \
 		charles \
@@ -191,17 +179,17 @@ uninstall-cask-apps: install-cask
 
 uninstall-command-line-tools: uninstall-git uninstall-sed uninstall-tree
 
-uninstall-git: install-brew
+uninstall-git: install-brew-and-cask
 	type ${GIT} >/dev/null 2>&1 && \
 		${HOMEBREW} uninstall git || \
 		true
 
-uninstall-sed: install-brew
+uninstall-sed: install-brew-and-cask
 	type ${SED} >/dev/null 2>&1 && \
 		${HOMEBREW} uninstall gnu-sed || \
 		true
 
-uninstall-tree: install-brew
+uninstall-tree: install-brew-and-cask
 	type ${TREE} >/dev/null 2>&1 && \
 		${HOMEBREW} uninstall tree || \
 		true
@@ -222,7 +210,7 @@ uninstall-elm-packages: install-elm
 
 uninstall-java-and-clojure-and-packages: uninstall-clojure-packages uninstall-clojure uninstall-java
 
-uninstall-clojure: install-brew
+uninstall-clojure: install-brew-and-cask
 	type ${LEININGEN} >/dev/null 2>&1 && \
 		${HOMEBREW} uninstall leiningen || \
 		true
@@ -230,17 +218,17 @@ uninstall-clojure: install-brew
 uninstall-clojure-packages: install-clojure
 	true
 
-uninstall-java: install-cask
+uninstall-java: install-brew-and-cask
 	type ${JAVA} >/dev/null 2>&1 && \
 		${CASK} uninstall java || \
 		true
 
 
 
-uninstall-nvm: install-brew
+uninstall-nvm: install-brew-and-cask
 	${HOMEBREW} uninstall nvm
 
 
 
-uninstall-pyenv: install-brew
+uninstall-pyenv: install-brew-and-cask
 	${HOMEBREW} uninstall pyenv-virtualenv && ${HOMEBREW} uninstall pyenv
