@@ -70,6 +70,7 @@ then
     :
 else
     source "$(brew --prefix nvm)/nvm.sh"
+    source "$(brew --prefix nvm)/etc/bash_completion.d/nvm"
 fi
 
 # Python version manager.
