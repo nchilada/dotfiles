@@ -33,7 +33,7 @@ YES := /usr/bin/yes
 
 # Install runtimes.
 
-install: install-brew-and-cask install-cask-apps install-command-line-tools install-java install-nvm install-pyenv
+install: install-brew-and-cask install-cask-apps install-command-line-tools install-nvm install-pyenv
 
 
 
@@ -139,7 +139,7 @@ update: install-brew-and-cask
 # Uninstall runtimes.
 
 # Uninstall individual brew packages BEFORE uninstalling brew.
-uninstall: uninstall-cask-apps uninstall-command-line-tools uninstall-elm-and-packages uninstall-java-and-clojure-and-packages uninstall-nvm uninstall-pyenv uninstall-brew-and-cask
+uninstall: uninstall-cask-apps uninstall-command-line-tools uninstall-elm-and-packages uninstall-nvm uninstall-pyenv uninstall-brew-and-cask
 
 
 
