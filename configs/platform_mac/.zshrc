@@ -69,6 +69,7 @@ if (( ${+functions[nvm]} ));
 then
     :
 else
+    # TODO: Speed these up? Together they take about a second to execute.
     source "$(brew --prefix nvm)/nvm.sh"
     source "$(brew --prefix nvm)/etc/bash_completion.d/nvm"
 fi
