@@ -1,10 +1,10 @@
-### Source: configs/platform_linux/profile_ews/.bashrc
+### Source: configs/platform_linux/profile_ews/.zshrc
 
 
-### First, inherit from the platform's .bashrc.
+### First, inherit from the platform's .zshrc.
 
 # Find the path to this file.
-FILE="${BASH_SOURCE[0]}"
+FILE="${(%):-%x}"
 while [ -h "$FILE" ]; do
     # $FILE is a symlink, so follow it to the source.
     TARGET="$(readlink "$FILE")"
@@ -20,7 +20,7 @@ done
 
 PLATFORM_PROFILE_CONFIGS=`dirname "$FILE"`
 PLATFORM_CONFIGS=`dirname "$PLATFORM_PROFILE_CONFIGS"`
-source "$PLATFORM_CONFIGS/.bashrc"
+source "$PLATFORM_CONFIGS/.zshrc"
 
 
 ### Now do the rest.

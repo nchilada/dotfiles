@@ -1,10 +1,10 @@
-### Source: configs/platform_linux/.bashrc
+### Source: configs/platform_linux/.zshrc
 
 
-### First, inherit from the common .bashrc.
+### First, inherit from the common .zshrc.
 
 # Find the path to this file.
-FILE="${BASH_SOURCE[0]}"
+FILE="${(%):-%x}"
 while [ -h "$FILE" ]; do
     # $FILE is a symlink, so follow it to the source.
     TARGET="$(readlink "$FILE")"
@@ -20,7 +20,7 @@ done
 
 DIR=`dirname "$FILE"`
 PARENT=`dirname "$DIR"`
-source "$PARENT/.bashrc"
+source "$PARENT/.zshrc"
 
 
 ### Now do the rest.

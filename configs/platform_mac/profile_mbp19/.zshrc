@@ -1,9 +1,9 @@
-### Source: configs/platform_mac/profile_mba12/.bashrc
+### Source: configs/platform_mac/profile_mba12/.zshrc
 
-### First, inherit from the platform's .bashrc.
+### First, inherit from the platform's .zshrc.
 
 # Find the path to this file.
-FILE="${BASH_SOURCE[0]}"
+FILE="${(%):-%x}"
 while [ -h "$FILE" ]; do
     # $FILE is a symlink, so follow it to the source.
     TARGET="$(readlink "$FILE")"
@@ -19,7 +19,7 @@ done
 
 DIR=`dirname "$FILE"`
 PARENT=`dirname "$DIR"`
-source "$PARENT/.bashrc"
+source "$PARENT/.zshrc"
 
 
 ### Now do the rest.

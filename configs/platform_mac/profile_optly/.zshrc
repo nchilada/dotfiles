@@ -1,9 +1,9 @@
-### Source: configs/platform_mac/profile_optly/.bashrc
+### Source: configs/platform_mac/profile_optly/.zshrc
 
-### First, inherit from the platform's .bashrc.
+### First, inherit from the platform's .zshrc.
 
 # Find the path to this file.
-FILE="${BASH_SOURCE[0]}"
+FILE="${(%):-%x}"
 while [ -h "$FILE" ]; do
     # $FILE is a symlink, so follow it to the source.
     TARGET="$(readlink "$FILE")"
@@ -19,7 +19,7 @@ done
 
 DIR=`dirname "$FILE"`
 PARENT=`dirname "$DIR"`
-source "$PARENT/.bashrc"
+source "$PARENT/.zshrc"
 
 
 ### Now do the rest.
@@ -35,7 +35,7 @@ export PATH=$HOME/optimizely/primordia/bin:$PATH
 export PATH=$HOME/tools/arcanist/bin:$PATH
 
 # Optimizely environment variables.
-# TODO: Unfortunately, `source "$PARENT/.bashrc"` sets `$DIR` to the parent, so we have to index into profile_optly/...
+# TODO: Unfortunately, `source "$PARENT/.zshrc"` sets `$DIR` to the parent, so we have to index into profile_optly/...
 export GITHUB_TOKEN=$(cat "$DIR/profile_optly/github_token.txt")
 source $DIR/profile_optly/client-js-github-token.bash
 source $DIR/profile_optly/browserstack.bash

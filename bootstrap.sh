@@ -9,7 +9,7 @@ if [ $# -ne 2 ]; then
    exit 1
 fi
 
-THIS_REPO="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+THIS_REPO="$( cd "$( dirname "${(%):-%x}" )" && pwd )"
 
 HOOKS="$THIS_REPO/hooks"
 
