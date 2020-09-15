@@ -33,7 +33,7 @@ YES := /usr/bin/yes
 
 # Install runtimes.
 
-install: install-brew-and-cask install-cask-apps install-command-line-tools install-elm-and-packages install-java-and-clojure-and-packages install-nvm install-pyenv
+install: install-brew-and-cask install-cask-apps install-command-line-tools install-java install-nvm install-pyenv
 
 
 
